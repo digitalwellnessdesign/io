@@ -1,0 +1,14 @@
+{
+  "name": "digital-wellness-design",
+  "version": "1.0.0",
+  "description": "Digital Wellness Design - Static Website",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build required - static HTML site'",
+    "preview": "npx serve ."
+  },
+  "keywords": ["wellness", "digital-wellness", "iphone"],
+  "author": "",
+  "license": "ISC"
+}
