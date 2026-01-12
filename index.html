@@ -522,26 +522,30 @@
     }
 
     .comparison-table th {
-      padding: var(--space-3);
+      padding: var(--space-4) var(--space-3);
       text-align: center;
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--midnight);
-      border-bottom: 1px solid var(--color-sand);
+      border-bottom: 2px solid var(--color-sand);
       font-family: 'Inter', sans-serif;
+      line-height: 1.4;
+      vertical-align: top;
     }
 
     .comparison-table th:first-child {
       text-align: left;
       padding-left: var(--space-4);
+      width: 180px;
     }
 
     .comparison-table td {
-      padding: var(--space-3);
+      padding: var(--space-4) var(--space-3);
       text-align: center;
       border-bottom: 1px solid var(--color-sand);
       font-size: 0.9375rem;
       color: var(--color-stone);
+      vertical-align: middle;
     }
 
     .comparison-table td:first-child {
@@ -549,27 +553,26 @@
       padding-left: var(--space-4);
       font-weight: 500;
       color: var(--midnight);
+      line-height: 1.5;
     }
 
-    .comparison-table tbody tr:last-child {
-      background: linear-gradient(135deg, var(--soft-cream) 0%, rgba(255, 255, 255, 0.5) 100%);
+    .comparison-table .highlight-column {
+      background: linear-gradient(180deg, rgba(255, 245, 238, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+      font-weight: 500;
     }
 
-    .comparison-table tbody tr:last-child td {
-      border-bottom: none;
+    .comparison-table thead .highlight-column {
       font-weight: 600;
-    }
-
-    .comparison-table tbody tr:last-child td:first-child {
       color: var(--deep-teal);
+      background: linear-gradient(180deg, var(--soft-cream) 0%, rgba(255, 245, 238, 0.6) 100%);
     }
 
     .comparison-table tbody tr:hover {
       background-color: rgba(125, 180, 232, 0.02);
     }
 
-    .comparison-table tbody tr:last-child:hover {
-      background: linear-gradient(135deg, var(--soft-cream) 0%, rgba(255, 255, 255, 0.7) 100%);
+    .comparison-table tbody tr:hover .highlight-column {
+      background: linear-gradient(180deg, rgba(255, 245, 238, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
     }
 
     .check-yes {
@@ -927,15 +930,35 @@
       }
 
       .comparison-table {
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .comparison-table thead,
+      .comparison-table tbody,
+      .comparison-table tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
       }
 
       .comparison-table th,
       .comparison-table td {
-        padding: var(--space-2);
+        padding: var(--space-3) var(--space-2);
       }
 
       .comparison-table th {
+        font-size: 0.75rem;
+        line-height: 1.3;
+      }
+
+      .comparison-table th:first-child {
+        width: 120px;
+      }
+
+      .comparison-table td:first-child {
         font-size: 0.8125rem;
       }
     }
@@ -956,12 +979,20 @@
       .comparison-table {
         display: block;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .comparison-table th,
       .comparison-table td {
-        padding: var(--space-1) var(--space-2);
-        font-size: 0.75rem;
+        padding: var(--space-2);
+        font-size: 0.6875rem;
+        white-space: nowrap;
+      }
+
+      .comparison-table th:first-child,
+      .comparison-table td:first-child {
+        white-space: normal;
+        min-width: 100px;
       }
     }
   </style>
@@ -1046,66 +1077,68 @@
   <section class="comparison-section">
     <div class="comparison-container">
       <div class="comparison-header">
-        <h2 class="star-accent-3">You may have already tried</h2>
+        <h2 class="star-accent-3">You may have already tried some of these</h2>
       </div>
 
       <table class="comparison-table">
         <thead>
           <tr>
             <th></th>
-            <th>Reduces distraction</th>
-            <th>Helps you reflect</th>
-            <th>Wellness goal momentum</th>
-            <th>Remote work compatible</th>
-            <th>Evolves with you</th>
-            <th>Non-shaming</th>
+            <th>iPhone Limit settings</th>
+            <th>Opal / blocker apps</th>
+            <th>Brick</th>
+            <th>Dumbphone / minimal phones</th>
+            <th class="highlight-column">Your custom redesign</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>iPhone Limit settings</td>
+            <td>Reduces distraction</td>
             <td><span class="check-yes">●</span></td>
-            <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
             <td><span class="check-yes">●</span></td>
-            <td><span class="check-partial">◐</span></td>
-            <td><span class="check-no">○</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
-            <td>Opal / blocker apps</td>
-            <td><span class="check-yes">●</span></td>
+            <td>Helps you reflect</td>
             <td><span class="check-no">○</span></td>
-            <td><span class="check-partial">◐</span></td>
-            <td><span class="check-partial">◐</span></td>
-            <td><span class="check-partial">◐</span></td>
             <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
-            <td>Brick</td>
-            <td><span class="check-yes">●</span></td>
-            <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
+            <td>Prioritizes your goals</td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-partial">◐</span></td>
             <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
-            <td>Dumbphone / minimal phones</td>
+            <td>Work compatible</td>
             <td><span class="check-yes">●</span></td>
+            <td><span class="check-partial">◐</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
+            <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
-            <td>Your custom redesign</td>
-            <td><span class="check-yes">●</span></td>
-            <td><span class="check-yes">●</span></td>
-            <td><span class="check-yes">●</span></td>
-            <td><span class="check-yes">●</span></td>
-            <td><span class="check-yes">●</span></td>
-            <td><span class="check-yes">●</span></td>
+            <td>Evolves with you</td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-no">○</span></td>
+            <td class="highlight-column"><span class="check-yes">●</span></td>
+          </tr>
+          <tr>
+            <td>Non-shaming</td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
         </tbody>
       </table>
