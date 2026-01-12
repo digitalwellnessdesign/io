@@ -50,7 +50,7 @@
     /* Hero with ambient background */
     .home-hero {
       position: relative;
-      min-height: 85vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -91,73 +91,53 @@
 
     .hero-eyebrow {
       font-size: 0.875rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--deep-teal);
       font-weight: 600;
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-4);
       position: relative;
       display: inline-block;
     }
 
-    /* Multiple decorative sparkles throughout */
+    /* Subtle decorative sparkles */
     .sparkle-1 {
       position: absolute;
-      top: 12%;
-      right: 18%;
-      font-size: 1.8rem;
+      top: 18%;
+      right: 15%;
+      font-size: 1.4rem;
       color: var(--sky-blue);
-      opacity: 0.25;
-      animation: twinkle-slow 4s ease-in-out infinite;
+      opacity: 0.22;
+      animation: twinkle-slow 5s ease-in-out infinite;
     }
 
     .sparkle-2 {
       position: absolute;
-      bottom: 25%;
-      left: 12%;
-      font-size: 1.2rem;
+      bottom: 20%;
+      left: 10%;
+      font-size: 1rem;
       color: var(--warm-rose);
-      opacity: 0.3;
-      animation: twinkle-slow 5s ease-in-out infinite 1s;
+      opacity: 0.25;
+      animation: twinkle-slow 6s ease-in-out infinite 1.5s;
     }
 
     .sparkle-3 {
       position: absolute;
-      top: 45%;
-      right: 8%;
-      font-size: 2rem;
-      color: var(--lavender-mist);
-      opacity: 0.2;
-      animation: twinkle-slow 6s ease-in-out infinite 2s;
-    }
-
-    .sparkle-4 {
-      position: absolute;
-      top: 70%;
-      left: 15%;
-      font-size: 0.9rem;
+      top: 60%;
+      right: 20%;
+      font-size: 1.6rem;
       color: var(--deep-teal);
-      opacity: 0.35;
-      animation: twinkle-slow 4.5s ease-in-out infinite 1.5s;
-    }
-
-    .sparkle-5 {
-      position: absolute;
-      bottom: 15%;
-      right: 22%;
-      font-size: 1.5rem;
-      color: var(--sky-blue);
-      opacity: 0.28;
-      animation: twinkle-slow 5.5s ease-in-out infinite 0.5s;
+      opacity: 0.2;
+      animation: twinkle-slow 7s ease-in-out infinite 3s;
     }
 
     @keyframes twinkle-slow {
-      0%, 100% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.1); }
+      0%, 100% { opacity: 0.18; transform: scale(1) rotate(0deg); }
+      50% { opacity: 0.35; transform: scale(1.08) rotate(5deg); }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .sparkle-1, .sparkle-2, .sparkle-3, .sparkle-4, .sparkle-5 {
+      .sparkle-1, .sparkle-2, .sparkle-3 {
         animation: none;
       }
     }
@@ -179,13 +159,13 @@
       display: inline-block;
       padding-right: 0.2em;
       padding-left: 0.05em;
-      margin-top: 0.3em;
+      padding-bottom: 0.3em;
     }
 
-    .handwritten::before {
+    .handwritten::after {
       content: '^';
       position: absolute;
-      top: -0.6em;
+      bottom: -0.15em;
       left: 50%;
       transform: translateX(-50%);
       font-size: 0.55em;
@@ -196,110 +176,14 @@
       line-height: 1;
     }
 
-    /* Hand-drawn star accents */
-    .star-accent {
-      position: relative;
-    }
-
-    .star-accent::after {
-      content: '✦';
-      position: absolute;
-      font-size: 0.7em;
-      color: var(--sky-blue);
-      opacity: 0.4;
-      animation: twinkle 3s ease-in-out infinite;
-    }
-
-    .star-accent-1::after {
-      top: -0.3em;
-      right: -0.8em;
-    }
-
-    .star-accent-2::after {
-      bottom: -0.2em;
-      left: -0.9em;
-    }
-
-    .star-accent-3::after {
-      top: 0.1em;
-      right: -0.7em;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.7; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .star-accent::after { animation: none; }
-    }
-
-    /* Floating decorative stars */
-    .floating-stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .floating-star {
-      position: absolute;
-      color: var(--sky-blue);
-      opacity: 0.15;
-      font-size: 1.5rem;
-      animation: float-drift 20s ease-in-out infinite;
-    }
-
-    .floating-star:nth-child(1) {
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .floating-star:nth-child(2) {
-      top: 45%;
-      right: 8%;
-      animation-delay: 3s;
-      font-size: 1.2rem;
-    }
-
-    .floating-star:nth-child(3) {
-      bottom: 20%;
-      left: 15%;
-      animation-delay: 6s;
-      font-size: 1rem;
-    }
-
-    @keyframes float-drift {
-      0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0.15;
-      }
-      25% {
-        transform: translate(10px, -10px) rotate(5deg);
-        opacity: 0.25;
-      }
-      50% {
-        transform: translate(-5px, -20px) rotate(-3deg);
-        opacity: 0.2;
-      }
-      75% {
-        transform: translate(-15px, -10px) rotate(4deg);
-        opacity: 0.18;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .floating-star { animation: none; }
-    }
 
     .home-hero .hero-subtitle {
-      font-size: 1.25rem;
-      line-height: 1.6;
+      font-size: 1.3rem;
+      line-height: 1.65;
       color: var(--color-stone);
-      max-width: 700px;
-      margin: 0 auto var(--space-5);
+      max-width: 650px;
+      margin: 0 auto var(--space-6);
+      font-weight: 400;
     }
 
     .hero-cta-group {
@@ -311,7 +195,7 @@
 
     /* Editorial section styles */
     .editorial-intro {
-      padding: var(--space-9) 0;
+      padding: var(--space-10) 0;
       background-color: white;
     }
 
@@ -343,24 +227,25 @@
 
     .editorial-visual {
       position: relative;
-      padding: var(--space-5);
+      padding: var(--space-6);
       background: linear-gradient(135deg, var(--soft-cream) 0%, white 100%);
-      border-radius: 12px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 400px;
+      min-height: 420px;
+      border: 1px solid rgba(125, 180, 232, 0.1);
     }
 
     .editorial-visual::before {
       content: '';
       position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 60%;
-      height: 60%;
+      top: 30px;
+      right: 30px;
+      width: 55%;
+      height: 55%;
       background: radial-gradient(circle, var(--sky-blue) 0%, transparent 70%);
-      opacity: 0.1;
+      opacity: 0.08;
       border-radius: 50%;
     }
 
@@ -377,7 +262,7 @@
 
     /* Dual audience section */
     .dual-audience {
-      padding: var(--space-9) 0;
+      padding: var(--space-10) 0;
       background: linear-gradient(180deg, white 0%, var(--soft-cream) 100%);
     }
 
@@ -408,17 +293,19 @@
 
     .audience-card {
       background: white;
-      border: 1px solid var(--color-sand);
-      border-radius: 12px;
-      padding: var(--space-6);
+      border: 1.5px solid var(--color-sand);
+      border-radius: 16px;
+      padding: var(--space-7);
       text-align: left;
       position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 2px 8px rgba(30, 42, 71, 0.03);
     }
 
     .audience-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(30, 42, 71, 0.08);
+      box-shadow: 0 12px 32px rgba(30, 42, 71, 0.1);
+      border-color: var(--sky-blue);
     }
 
     .audience-card::before {
@@ -426,10 +313,16 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 4px;
+      width: 3px;
       height: 100%;
       background: linear-gradient(180deg, var(--sky-blue) 0%, var(--deep-teal) 100%);
-      border-radius: 12px 0 0 12px;
+      border-radius: 16px 0 0 16px;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .audience-card:hover::before {
+      opacity: 1;
     }
 
     .audience-card p {
@@ -463,7 +356,7 @@
 
     /* Comparison grid section */
     .comparison-section {
-      padding: var(--space-9) 0;
+      padding: var(--space-10) 0;
       background-color: white;
     }
 
@@ -488,11 +381,12 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      margin-top: var(--space-5);
+      margin-top: var(--space-6);
       background: white;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--color-sand);
+      border: 1.5px solid var(--color-sand);
+      box-shadow: 0 2px 8px rgba(30, 42, 71, 0.03);
     }
 
     .comparison-table thead {
@@ -500,31 +394,31 @@
     }
 
     .comparison-table th {
-      padding: var(--space-3);
+      padding: var(--space-4);
       text-align: center;
       font-size: 0.9375rem;
       font-weight: 600;
       color: var(--midnight);
-      border-bottom: 1px solid var(--color-sand);
+      border-bottom: 1.5px solid var(--color-sand);
       font-family: 'Inter', sans-serif;
     }
 
     .comparison-table th:first-child {
       text-align: left;
-      padding-left: var(--space-4);
+      padding-left: var(--space-5);
     }
 
     .comparison-table td {
-      padding: var(--space-3);
+      padding: var(--space-4);
       text-align: center;
-      border-bottom: 1px solid var(--color-sand);
+      border-bottom: 1px solid rgba(230, 230, 230, 0.5);
       font-size: 0.9375rem;
       color: var(--color-stone);
     }
 
     .comparison-table td:first-child {
       text-align: left;
-      padding-left: var(--space-4);
+      padding-left: var(--space-5);
       font-weight: 500;
       color: var(--midnight);
     }
@@ -582,8 +476,8 @@
 
     /* Services showcase */
     .services-showcase {
-      padding: var(--space-9) 0;
-      background-color: white;
+      padding: var(--space-10) 0;
+      background: linear-gradient(180deg, var(--soft-cream) 0%, white 100%);
     }
 
     .showcase-header {
@@ -615,13 +509,14 @@
     }
 
     .service-card {
-      background: linear-gradient(135deg, var(--soft-cream) 0%, white 100%);
-      border: 1px solid var(--color-sand);
-      border-radius: 12px;
-      padding: var(--space-5);
-      transition: all 0.3s ease;
+      background: white;
+      border: 1.5px solid var(--color-sand);
+      border-radius: 16px;
+      padding: var(--space-6);
+      transition: all 0.35s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 2px 8px rgba(30, 42, 71, 0.03);
     }
 
     .service-card::after {
@@ -631,18 +526,19 @@
       right: -50%;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, var(--sky-blue) 0%, transparent 60%);
+      background: radial-gradient(circle, var(--sky-blue) 0%, transparent 65%);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.35s ease;
     }
 
     .service-card:hover::after {
-      opacity: 0.05;
+      opacity: 0.08;
     }
 
     .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 32px rgba(30, 42, 71, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(30, 42, 71, 0.12);
+      border-color: var(--sky-blue);
     }
 
     .service-illustration {
@@ -667,7 +563,7 @@
 
     /* Nature-tech integration section */
     .nature-tech {
-      padding: var(--space-9) 0;
+      padding: var(--space-10) 0;
       background: linear-gradient(180deg, white 0%, var(--soft-cream) 50%, white 100%);
       position: relative;
       overflow: hidden;
@@ -676,24 +572,24 @@
     .nature-tech::before {
       content: '';
       position: absolute;
-      top: 10%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
+      top: 15%;
+      left: -8%;
+      width: 350px;
+      height: 350px;
       background: radial-gradient(circle, var(--lavender-mist) 0%, transparent 70%);
-      opacity: 0.06;
+      opacity: 0.05;
       border-radius: 50%;
     }
 
     .nature-tech::after {
       content: '';
       position: absolute;
-      bottom: 10%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
+      bottom: 15%;
+      right: -8%;
+      width: 400px;
+      height: 400px;
       background: radial-gradient(circle, var(--sky-blue) 0%, transparent 70%);
-      opacity: 0.06;
+      opacity: 0.05;
       border-radius: 50%;
     }
 
@@ -728,14 +624,21 @@
     }
 
     .principle-item {
-      padding: var(--space-4);
+      padding: var(--space-5);
       background: white;
-      border-radius: 8px;
-      border-left: 3px solid var(--sky-blue);
+      border-radius: 12px;
+      border-left: 4px solid var(--sky-blue);
+      box-shadow: 0 2px 6px rgba(30, 42, 71, 0.03);
+      transition: all 0.3s ease;
     }
 
     .principle-item:nth-child(2n) {
       border-left-color: var(--deep-teal);
+    }
+
+    .principle-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(30, 42, 71, 0.06);
     }
 
     .principle-item h4 {
@@ -754,7 +657,7 @@
 
     /* Email capture section */
     .email-capture {
-      padding: var(--space-8) 0;
+      padding: var(--space-10) 0;
       background: linear-gradient(135deg, var(--midnight) 0%, var(--deep-teal) 100%);
       color: white;
     }
@@ -836,33 +739,42 @@
       background: white;
       color: var(--midnight);
       border: 2px solid white;
+      transition: all 0.3s ease;
     }
 
     .btn-light:hover {
       background: transparent;
       color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     }
 
     .btn-teal {
       background: var(--deep-teal);
       color: white;
       border: 2px solid var(--deep-teal);
+      transition: all 0.3s ease;
     }
 
     .btn-teal:hover {
       background: var(--sky-blue);
       border-color: var(--sky-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(44, 122, 123, 0.3);
     }
 
     .btn-outline-dark {
       background: transparent;
       color: var(--midnight);
       border: 2px solid var(--midnight);
+      transition: all 0.3s ease;
     }
 
     .btn-outline-dark:hover {
       background: var(--midnight);
       color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(30, 42, 71, 0.15);
     }
 
     /* Responsive adjustments */
@@ -966,12 +878,10 @@
     <div class="sparkle-1" aria-hidden="true">✦</div>
     <div class="sparkle-2" aria-hidden="true">✧</div>
     <div class="sparkle-3" aria-hidden="true">✦</div>
-    <div class="sparkle-4" aria-hidden="true">✧</div>
-    <div class="sparkle-5" aria-hidden="true">✦</div>
     <div class="hero-content">
       <p class="hero-eyebrow">iPhone Wellness Studio</p>
       <h1>Your <span class="handwritten">redesigned</span> screen can support your wellness</h1>
-      <p class="hero-subtitle">A calm, intentional space for people ready to redesign their relationship with tech. Less noise, more alignment.</p>
+      <p class="hero-subtitle">1:1 support for people ready to redesign their relationship with tech at the root.</p>
       <div class="hero-cta-group">
         <a href="/services.html" class="btn btn-teal">Work with Me</a>
         <a href="/contact.html" class="btn btn-light">Get in Touch</a>
@@ -980,15 +890,10 @@
   </section>
 
   <!-- Editorial Intro -->
-  <section class="editorial-intro" style="position: relative;">
-    <div class="floating-stars">
-      <div class="floating-star">✦</div>
-      <div class="floating-star">✦</div>
-      <div class="floating-star">✦</div>
-    </div>
+  <section class="editorial-intro">
     <div class="editorial-grid">
       <div class="editorial-text">
-        <h2 class="star-accent-2">Design days with more intention, less checking</h2>
+        <h2>Design days with more intention, less checking</h2>
         <p>Your iPhone holds space in your life—morning routines, quiet moments, the in-between. What if that space felt more like you?</p>
         <p>I work one-to-one with people who want their tech to reflect their values. Less noise, more intention. Seasonal rhythms, wellness rituals, a pace that actually feels good.</p>
         <p>Not another productivity hack. A redesign rooted in who you're becoming.</p>
@@ -1004,7 +909,7 @@
   <!-- Audience Section -->
   <section class="dual-audience">
     <div class="audience-container">
-      <h2 class="star-accent-1">You might be here because...</h2>
+      <h2>You might be here because...</h2>
       <div class="audience-cards">
         <div class="audience-card">
           <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--space-4);">You're tired of the scroll. Ready to reclaim focus. Or you just want your phone to feel less chaotic and more like <em>you</em>.</p>
@@ -1024,7 +929,7 @@
   <section class="comparison-section">
     <div class="comparison-container">
       <div class="comparison-header">
-        <h2 class="star-accent-3">You may have already tried</h2>
+        <h2>You may have already tried...</h2>
       </div>
 
       <table class="comparison-table">
@@ -1125,7 +1030,7 @@
   <!-- Nature + Tech Philosophy -->
   <section class="nature-tech">
     <div class="nature-tech-content">
-      <h2 class="star-accent-1">Aligned with nature. Designed for living life.</h2>
+      <h2>Aligned with nature. Designed for living life.</h2>
       <p>I take a seasonal, intentional approach to iPhone wellness. Your screen should shift as you do—honoring your rhythms, your environment, the light outside your window.</p>
       <p>Small, thoughtful changes. Real, sustainable shifts.</p>
 
@@ -1153,7 +1058,7 @@
   <!-- Email Capture -->
   <section class="email-capture">
     <div class="capture-content">
-      <h2 class="star-accent-2">Start your seasonal redesign</h2>
+      <h2>Start your seasonal redesign</h2>
       <p>Download the free printable guide with tips to align your iPhone with this season of your life—and the one outside your window.</p>
 
       <form action="https://example.com/EMAIL-SIGNUP" method="post" class="capture-form">
