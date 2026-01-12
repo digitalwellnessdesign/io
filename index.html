@@ -18,7 +18,7 @@
   <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/global.css">
@@ -107,6 +107,26 @@
       color: var(--midnight);
       margin-bottom: var(--space-4);
       font-weight: 600;
+    }
+
+    .handwritten {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      color: var(--deep-teal);
+      font-size: 3.75rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .handwritten::after {
+      content: '';
+      position: absolute;
+      bottom: 0.1em;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--deep-teal);
+      opacity: 0.3;
     }
 
     .home-hero .hero-subtitle {
@@ -213,9 +233,12 @@
 
     .audience-cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: var(--space-5);
       margin-top: var(--space-6);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .audience-card {
@@ -242,10 +265,6 @@
       height: 100%;
       background: linear-gradient(180deg, var(--sky-blue) 0%, var(--deep-teal) 100%);
       border-radius: 12px 0 0 12px;
-    }
-
-    .audience-card:nth-child(2)::before {
-      background: linear-gradient(180deg, var(--warm-rose) 0%, var(--lavender-mist) 100%);
     }
 
     .audience-card h3 {
@@ -281,6 +300,125 @@
       left: 0;
       color: var(--deep-teal);
       font-weight: 600;
+    }
+
+    /* Comparison grid section */
+    .comparison-section {
+      padding: var(--space-9) 0;
+      background-color: white;
+    }
+
+    .comparison-container {
+      max-width: var(--container-lg);
+      margin: 0 auto;
+      padding: 0 var(--space-3);
+    }
+
+    .comparison-header {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .comparison-header h2 {
+      font-size: 2.5rem;
+      color: var(--midnight);
+      margin-bottom: var(--space-3);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: var(--space-5);
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--color-sand);
+    }
+
+    .comparison-table thead {
+      background: linear-gradient(135deg, var(--soft-cream) 0%, white 100%);
+    }
+
+    .comparison-table th {
+      padding: var(--space-3);
+      text-align: center;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--midnight);
+      border-bottom: 1px solid var(--color-sand);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .comparison-table th:first-child {
+      text-align: left;
+      padding-left: var(--space-4);
+    }
+
+    .comparison-table td {
+      padding: var(--space-3);
+      text-align: center;
+      border-bottom: 1px solid var(--color-sand);
+      font-size: 0.9375rem;
+      color: var(--color-stone);
+    }
+
+    .comparison-table td:first-child {
+      text-align: left;
+      padding-left: var(--space-4);
+      font-weight: 500;
+      color: var(--midnight);
+    }
+
+    .comparison-table tbody tr:last-child {
+      background: linear-gradient(135deg, var(--soft-cream) 0%, rgba(255, 255, 255, 0.5) 100%);
+    }
+
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+      font-weight: 600;
+    }
+
+    .comparison-table tbody tr:last-child td:first-child {
+      color: var(--deep-teal);
+    }
+
+    .comparison-table tbody tr:hover {
+      background-color: rgba(125, 180, 232, 0.02);
+    }
+
+    .comparison-table tbody tr:last-child:hover {
+      background: linear-gradient(135deg, var(--soft-cream) 0%, rgba(255, 255, 255, 0.7) 100%);
+    }
+
+    .check-yes {
+      color: var(--deep-teal);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .check-no {
+      color: var(--color-warm-gray);
+      font-size: 1.25rem;
+      opacity: 0.4;
+    }
+
+    .check-partial {
+      color: var(--sky-blue);
+      font-size: 1.25rem;
+      opacity: 0.7;
+    }
+
+    .comparison-caption {
+      text-align: center;
+      margin-top: var(--space-4);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--color-stone);
+      font-style: italic;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Services showcase */
@@ -574,6 +712,10 @@
         font-size: 2.5rem;
       }
 
+      .handwritten {
+        font-size: 2.75rem;
+      }
+
       .editorial-grid {
         grid-template-columns: 1fr;
         gap: var(--space-5);
@@ -582,11 +724,11 @@
       .editorial-text h2,
       .audience-container h2,
       .showcase-header h2,
-      .nature-tech h2 {
+      .nature-tech h2,
+      .comparison-header h2 {
         font-size: 2rem;
       }
 
-      .audience-cards,
       .service-cards {
         grid-template-columns: 1fr;
       }
@@ -602,6 +744,19 @@
       .hero-cta-group .btn {
         width: 100%;
       }
+
+      .comparison-table {
+        font-size: 0.875rem;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: var(--space-2);
+      }
+
+      .comparison-table th {
+        font-size: 0.8125rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -609,8 +764,23 @@
         font-size: 2rem;
       }
 
+      .handwritten {
+        font-size: 2.25rem;
+      }
+
       .hero-eyebrow {
         font-size: 0.8rem;
+      }
+
+      .comparison-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: var(--space-1) var(--space-2);
+        font-size: 0.75rem;
       }
     }
   </style>
@@ -623,8 +793,8 @@
       <div class="main-nav">
         <ul>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/practitioners.html">For Practitioners</a></li>
+          <li><a href="/services.html">Work with Me</a></li>
+          <li><a href="/practitioners.html">Business Services</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
@@ -636,8 +806,8 @@
     <div class="hero-ambient" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-eyebrow sparkle-accent">iPhone Wellness Studio</p>
-      <h1>Your screen can support your wellness</h1>
-      <p class="hero-subtitle">A calm, intentional space for people ready to redesign their relationship with tech—and wellness businesses building aligned digital presence.</p>
+      <h1>Your <span class="handwritten">redesigned</span> screen can support your wellness</h1>
+      <p class="hero-subtitle">A calm, intentional space for people ready to redesign their relationship with tech. Less noise, more alignment.</p>
       <div class="hero-cta-group">
         <a href="/services.html" class="btn btn-teal">Explore Services</a>
         <a href="/contact.html" class="btn btn-light">Get in Touch</a>
@@ -649,7 +819,7 @@
   <section class="editorial-intro">
     <div class="editorial-grid">
       <div class="editorial-text">
-        <h2 class="sparkle-accent">Design your days, one screen at a time</h2>
+        <h2 class="sparkle-accent">Design days with more intention, less checking</h2>
         <p>Your iPhone holds space in your life—morning routines, quiet moments, the in-between. What if that space felt more like you?</p>
         <p>I work one-to-one with people who want their tech to reflect their values: less noise, more intention. Seasonal rhythms, wellness rituals, a pace that actually feels good.</p>
         <p>Not another productivity hack. A redesign rooted in who you're becoming.</p>
@@ -662,12 +832,11 @@
     </div>
   </section>
 
-  <!-- Dual Audience Section -->
+  <!-- Audience Section -->
   <section class="dual-audience">
     <div class="audience-container">
       <h2>Who this is for</h2>
       <div class="audience-cards">
-        <!-- Individuals Card -->
         <div class="audience-card">
           <h3>You're on a wellness journey</h3>
           <p>Maybe you're tired of the scroll, ready to reclaim focus, or just want your phone to feel less chaotic and more aligned.</p>
@@ -677,22 +846,81 @@
             <li>Automate wellness-friendly nudges for your rituals</li>
             <li>Sync your phone to the season—of life and nature</li>
           </ul>
-          <a href="/services.html" class="btn btn-outline-dark">See Individual Services</a>
-        </div>
-
-        <!-- Businesses Card -->
-        <div class="audience-card">
-          <h3>You're a wellness business</h3>
-          <p>Your work is grounded in intention. Your website should be too—calm, aligned, and built to reflect what you actually offer.</p>
-          <ul>
-            <li>Websites for practitioners ready to launch or refresh</li>
-            <li>Editorial design that feels premium, not templated</li>
-            <li>Messaging rooted in your voice and values</li>
-            <li>Built for clarity, trust, and sustainable growth</li>
-          </ul>
-          <a href="/practitioners.html" class="btn btn-outline-dark">Explore Business Services</a>
+          <a href="/services.html" class="btn btn-outline-dark">Explore Services</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Comparison Grid Section -->
+  <section class="comparison-section">
+    <div class="comparison-container">
+      <div class="comparison-header">
+        <h2>Ways to change your relationship with your iPhone</h2>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Reduces distraction</th>
+            <th>Helps you reflect</th>
+            <th>Wellness goal momentum</th>
+            <th>Remote work compatible</th>
+            <th>Evolves with you</th>
+            <th>Non-shaming</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>iPhone Limit settings</td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-no">○</span></td>
+          </tr>
+          <tr>
+            <td>Opal / blocker apps</td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-no">○</span></td>
+          </tr>
+          <tr>
+            <td>Brick</td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-no">○</span></td>
+          </tr>
+          <tr>
+            <td>Dumbphone / minimal phones</td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+          </tr>
+          <tr>
+            <td>Your custom redesign</td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-yes">●</span></td>
+            <td><span class="check-yes">●</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="comparison-caption">This work is designed for people who are ready for change, and discovering what they want to move toward.</p>
     </div>
   </section>
 
@@ -777,8 +1005,8 @@
 
       <div class="footer-links">
         <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/practitioners.html">For Practitioners</a>
+        <a href="/services.html">Work with Me</a>
+        <a href="/practitioners.html">Business Services</a>
         <a href="/contact.html">Contact</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
