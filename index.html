@@ -18,10 +18,20 @@
   <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/global.css">
+
+  <style>
+    @font-face {
+      font-family: 'Gistesy';
+      src: url('/fonts/gistesy.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
 
   <style>
     /* ===== HOMEPAGE-SPECIFIC STYLES ===== */
@@ -90,15 +100,66 @@
       display: inline-block;
     }
 
-    /* Subtle sparkle accent */
-    .sparkle-accent::after {
-      content: '✦';
+    /* Multiple decorative sparkles throughout */
+    .sparkle-1 {
       position: absolute;
-      right: -24px;
-      top: -4px;
-      font-size: 0.75rem;
+      top: 12%;
+      right: 18%;
+      font-size: 1.8rem;
       color: var(--sky-blue);
-      opacity: 0.6;
+      opacity: 0.25;
+      animation: twinkle-slow 4s ease-in-out infinite;
+    }
+
+    .sparkle-2 {
+      position: absolute;
+      bottom: 25%;
+      left: 12%;
+      font-size: 1.2rem;
+      color: var(--warm-rose);
+      opacity: 0.3;
+      animation: twinkle-slow 5s ease-in-out infinite 1s;
+    }
+
+    .sparkle-3 {
+      position: absolute;
+      top: 45%;
+      right: 8%;
+      font-size: 2rem;
+      color: var(--lavender-mist);
+      opacity: 0.2;
+      animation: twinkle-slow 6s ease-in-out infinite 2s;
+    }
+
+    .sparkle-4 {
+      position: absolute;
+      top: 70%;
+      left: 15%;
+      font-size: 0.9rem;
+      color: var(--deep-teal);
+      opacity: 0.35;
+      animation: twinkle-slow 4.5s ease-in-out infinite 1.5s;
+    }
+
+    .sparkle-5 {
+      position: absolute;
+      bottom: 15%;
+      right: 22%;
+      font-size: 1.5rem;
+      color: var(--sky-blue);
+      opacity: 0.28;
+      animation: twinkle-slow 5.5s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes twinkle-slow {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sparkle-1, .sparkle-2, .sparkle-3, .sparkle-4, .sparkle-5 {
+        animation: none;
+      }
     }
 
     .home-hero h1 {
@@ -110,37 +171,29 @@
     }
 
     .handwritten {
-      font-family: 'Kalam', cursive;
-      font-weight: 400;
+      font-family: 'Gistesy', cursive;
+      font-weight: normal;
       color: var(--deep-teal);
-      font-size: 3.5rem;
+      font-size: 3.25rem;
       position: relative;
       display: inline-block;
-      padding-right: 0.15em;
+      padding-right: 0.2em;
+      padding-left: 0.05em;
+      margin-top: 0.3em;
     }
 
     .handwritten::before {
       content: '^';
       position: absolute;
-      top: -0.5em;
+      top: -0.6em;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.6em;
+      font-size: 0.55em;
       color: var(--deep-teal);
-      opacity: 0.5;
+      opacity: 0.6;
       font-family: 'Inter', sans-serif;
       font-weight: 400;
-    }
-
-    .handwritten::after {
-      content: '';
-      position: absolute;
-      bottom: 0.15em;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--deep-teal);
-      opacity: 0.25;
+      line-height: 1;
     }
 
     /* Hand-drawn star accents */
@@ -819,7 +872,7 @@
       }
 
       .handwritten {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
       }
 
       .editorial-grid {
@@ -871,7 +924,7 @@
       }
 
       .handwritten {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .hero-eyebrow {
@@ -910,8 +963,13 @@
   <!-- Hero Section -->
   <section class="home-hero">
     <div class="hero-ambient" aria-hidden="true"></div>
+    <div class="sparkle-1" aria-hidden="true">✦</div>
+    <div class="sparkle-2" aria-hidden="true">✧</div>
+    <div class="sparkle-3" aria-hidden="true">✦</div>
+    <div class="sparkle-4" aria-hidden="true">✧</div>
+    <div class="sparkle-5" aria-hidden="true">✦</div>
     <div class="hero-content">
-      <p class="hero-eyebrow sparkle-accent">iPhone Wellness Studio</p>
+      <p class="hero-eyebrow">iPhone Wellness Studio</p>
       <h1>Your <span class="handwritten">redesigned</span> screen can support your wellness</h1>
       <p class="hero-subtitle">A calm, intentional space for people ready to redesign their relationship with tech. Less noise, more alignment.</p>
       <div class="hero-cta-group">
@@ -966,7 +1024,7 @@
   <section class="comparison-section">
     <div class="comparison-container">
       <div class="comparison-header">
-        <h2 class="star-accent-3">Ways to change your relationship with your iPhone</h2>
+        <h2 class="star-accent-3">You may have already tried</h2>
       </div>
 
       <table class="comparison-table">
@@ -1037,7 +1095,7 @@
   <!-- Services Showcase -->
   <section class="services-showcase">
     <div class="showcase-header">
-      <h2 class="sparkle-accent">Work with me</h2>
+      <h2>Work with me</h2>
       <p>One-to-one sessions designed to help you redesign your iPhone with intention, rhythm, and ease.</p>
     </div>
     <div class="service-cards">
@@ -1067,7 +1125,7 @@
   <!-- Nature + Tech Philosophy -->
   <section class="nature-tech">
     <div class="nature-tech-content">
-      <h2 class="star-accent-1">Aligned with nature. Designed for life.</h2>
+      <h2 class="star-accent-1">Aligned with nature. Designed for living life.</h2>
       <p>I take a seasonal, intentional approach to iPhone wellness. Your screen should shift as you do—honoring your rhythms, your environment, the light outside your window.</p>
       <p>Small, thoughtful changes. Real, sustainable shifts.</p>
 
