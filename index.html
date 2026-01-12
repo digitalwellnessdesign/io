@@ -196,6 +196,25 @@
       line-height: 1;
     }
 
+    .caret-annotation {
+      position: relative;
+      display: inline-block;
+    }
+
+    .caret-annotation::after {
+      content: '^';
+      position: absolute;
+      bottom: -0.9em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8em;
+      color: var(--deep-teal);
+      opacity: 0.5;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1;
+    }
+
     /* Hand-drawn star accents */
     .star-accent {
       position: relative;
@@ -971,7 +990,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">iPhone Wellness Studio</p>
       <h1>Your <span class="handwritten">redesigned</span> screen can support your wellness</h1>
-      <p class="hero-subtitle">A calm, intentional space for people ready to redesign their relationship with tech. Less noise, more alignment.</p>
+      <p class="hero-subtitle">1:1 support for people ready to <span class="caret-annotation">redesign</span> their relationship with tech at the root.</p>
       <div class="hero-cta-group">
         <a href="/services.html" class="btn btn-teal">Work with Me</a>
         <a href="/contact.html" class="btn btn-light">Get in Touch</a>
