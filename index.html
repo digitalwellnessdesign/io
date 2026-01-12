@@ -18,7 +18,7 @@
   <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/global.css">
@@ -110,23 +110,135 @@
     }
 
     .handwritten {
-      font-family: 'Caveat', cursive;
-      font-weight: 600;
+      font-family: 'Kalam', cursive;
+      font-weight: 400;
       color: var(--deep-teal);
-      font-size: 3.75rem;
+      font-size: 3.5rem;
       position: relative;
       display: inline-block;
+      padding-right: 0.15em;
+    }
+
+    .handwritten::before {
+      content: '^';
+      position: absolute;
+      top: -0.5em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6em;
+      color: var(--deep-teal);
+      opacity: 0.5;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
     }
 
     .handwritten::after {
       content: '';
       position: absolute;
-      bottom: 0.1em;
+      bottom: 0.15em;
       left: 0;
       right: 0;
-      height: 2px;
+      height: 1px;
       background: var(--deep-teal);
-      opacity: 0.3;
+      opacity: 0.25;
+    }
+
+    /* Hand-drawn star accents */
+    .star-accent {
+      position: relative;
+    }
+
+    .star-accent::after {
+      content: '✦';
+      position: absolute;
+      font-size: 0.7em;
+      color: var(--sky-blue);
+      opacity: 0.4;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    .star-accent-1::after {
+      top: -0.3em;
+      right: -0.8em;
+    }
+
+    .star-accent-2::after {
+      bottom: -0.2em;
+      left: -0.9em;
+    }
+
+    .star-accent-3::after {
+      top: 0.1em;
+      right: -0.7em;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .star-accent::after { animation: none; }
+    }
+
+    /* Floating decorative stars */
+    .floating-stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating-star {
+      position: absolute;
+      color: var(--sky-blue);
+      opacity: 0.15;
+      font-size: 1.5rem;
+      animation: float-drift 20s ease-in-out infinite;
+    }
+
+    .floating-star:nth-child(1) {
+      top: 15%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .floating-star:nth-child(2) {
+      top: 45%;
+      right: 8%;
+      animation-delay: 3s;
+      font-size: 1.2rem;
+    }
+
+    .floating-star:nth-child(3) {
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 6s;
+      font-size: 1rem;
+    }
+
+    @keyframes float-drift {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.15;
+      }
+      25% {
+        transform: translate(10px, -10px) rotate(5deg);
+        opacity: 0.25;
+      }
+      50% {
+        transform: translate(-5px, -20px) rotate(-3deg);
+        opacity: 0.2;
+      }
+      75% {
+        transform: translate(-15px, -10px) rotate(4deg);
+        opacity: 0.18;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .floating-star { animation: none; }
     }
 
     .home-hero .hero-subtitle {
@@ -265,12 +377,6 @@
       height: 100%;
       background: linear-gradient(180deg, var(--sky-blue) 0%, var(--deep-teal) 100%);
       border-radius: 12px 0 0 12px;
-    }
-
-    .audience-card h3 {
-      font-size: 1.75rem;
-      color: var(--midnight);
-      margin-bottom: var(--space-3);
     }
 
     .audience-card p {
@@ -713,7 +819,7 @@
       }
 
       .handwritten {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
       }
 
       .editorial-grid {
@@ -765,7 +871,7 @@
       }
 
       .handwritten {
-        font-size: 2.25rem;
+        font-size: 2rem;
       }
 
       .hero-eyebrow {
@@ -809,19 +915,24 @@
       <h1>Your <span class="handwritten">redesigned</span> screen can support your wellness</h1>
       <p class="hero-subtitle">A calm, intentional space for people ready to redesign their relationship with tech. Less noise, more alignment.</p>
       <div class="hero-cta-group">
-        <a href="/services.html" class="btn btn-teal">Explore Services</a>
+        <a href="/services.html" class="btn btn-teal">Work with Me</a>
         <a href="/contact.html" class="btn btn-light">Get in Touch</a>
       </div>
     </div>
   </section>
 
   <!-- Editorial Intro -->
-  <section class="editorial-intro">
+  <section class="editorial-intro" style="position: relative;">
+    <div class="floating-stars">
+      <div class="floating-star">✦</div>
+      <div class="floating-star">✦</div>
+      <div class="floating-star">✦</div>
+    </div>
     <div class="editorial-grid">
       <div class="editorial-text">
-        <h2 class="sparkle-accent">Design days with more intention, less checking</h2>
+        <h2 class="star-accent-2">Design days with more intention, less checking</h2>
         <p>Your iPhone holds space in your life—morning routines, quiet moments, the in-between. What if that space felt more like you?</p>
-        <p>I work one-to-one with people who want their tech to reflect their values: less noise, more intention. Seasonal rhythms, wellness rituals, a pace that actually feels good.</p>
+        <p>I work one-to-one with people who want their tech to reflect their values. Less noise, more intention. Seasonal rhythms, wellness rituals, a pace that actually feels good.</p>
         <p>Not another productivity hack. A redesign rooted in who you're becoming.</p>
       </div>
       <div class="editorial-visual">
@@ -835,18 +946,17 @@
   <!-- Audience Section -->
   <section class="dual-audience">
     <div class="audience-container">
-      <h2>Who this is for</h2>
+      <h2 class="star-accent-1">You might be here because...</h2>
       <div class="audience-cards">
         <div class="audience-card">
-          <h3>You're on a wellness journey</h3>
-          <p>Maybe you're tired of the scroll, ready to reclaim focus, or just want your phone to feel less chaotic and more aligned.</p>
+          <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--space-4);">You're tired of the scroll. Ready to reclaim focus. Or you just want your phone to feel less chaotic and more like <em>you</em>.</p>
           <ul>
-            <li>Reduce distractions without losing connection</li>
-            <li>Design a screen that supports your nervous system</li>
-            <li>Automate wellness-friendly nudges for your rituals</li>
-            <li>Sync your phone to the season—of life and nature</li>
+            <li>You want to reduce distractions without losing connection</li>
+            <li>You're building a life that honors your nervous system</li>
+            <li>You have wellness rituals—and want your phone to support them</li>
+            <li>You're ready for tech that evolves with your seasons</li>
           </ul>
-          <a href="/services.html" class="btn btn-outline-dark">Explore Services</a>
+          <a href="/services.html" class="btn btn-outline-dark">See How We Work Together</a>
         </div>
       </div>
     </div>
@@ -856,7 +966,7 @@
   <section class="comparison-section">
     <div class="comparison-container">
       <div class="comparison-header">
-        <h2>Ways to change your relationship with your iPhone</h2>
+        <h2 class="star-accent-3">Ways to change your relationship with your iPhone</h2>
       </div>
 
       <table class="comparison-table">
@@ -920,7 +1030,7 @@
         </tbody>
       </table>
 
-      <p class="comparison-caption">This work is designed for people who are ready for change, and discovering what they want to move toward.</p>
+      <p class="comparison-caption">This work is for people who are ready for change—and discovering what they want to move toward, not just what they're trying to avoid.</p>
     </div>
   </section>
 
@@ -957,7 +1067,7 @@
   <!-- Nature + Tech Philosophy -->
   <section class="nature-tech">
     <div class="nature-tech-content">
-      <h2>Aligned with nature. Designed for life.</h2>
+      <h2 class="star-accent-1">Aligned with nature. Designed for life.</h2>
       <p>I take a seasonal, intentional approach to iPhone wellness. Your screen should shift as you do—honoring your rhythms, your environment, the light outside your window.</p>
       <p>Small, thoughtful changes. Real, sustainable shifts.</p>
 
@@ -985,7 +1095,7 @@
   <!-- Email Capture -->
   <section class="email-capture">
     <div class="capture-content">
-      <h2>Start your seasonal redesign</h2>
+      <h2 class="star-accent-2">Start your seasonal redesign</h2>
       <p>Download the free printable guide with tips to align your iPhone with this season of your life—and the one outside your window.</p>
 
       <form action="https://example.com/EMAIL-SIGNUP" method="post" class="capture-form">
@@ -994,7 +1104,7 @@
         <button type="submit">Send Me the Guide</button>
       </form>
 
-      <p class="form-note">Join the list for the free guide plus seasonal tips (sent quarterly, never spammy).</p>
+      <p class="form-note">Join for the free guide plus seasonal tips (sent quarterly, never spammy).</p>
     </div>
   </section>
 
