@@ -22,6 +22,59 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/global.css">
+  <style>
+    /* Brand colors */
+    :root {
+      --deep-green: #2c7a7b;
+      --navy-blue: #1e2a47;
+      --warm-cream: #fff5ee;
+      --silver-grey: #e6e6e6;
+      --pink: #da72a3;
+      --light-blue: #7db4e8;
+      --soft-purple: #b39ddb;
+    }
+
+    /* Section styling with brand colors */
+    .brand-bg-cream {
+      background: var(--warm-cream);
+    }
+
+    .feature-block {
+      background: white;
+      padding: var(--space-5);
+      border-radius: 12px;
+      margin-bottom: var(--space-4);
+      border-left: 4px solid var(--light-blue);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .feature-block:hover {
+      border-left-color: var(--deep-green);
+      box-shadow: 0 4px 16px rgba(44, 122, 123, 0.1);
+    }
+
+    .feature-block h3 {
+      color: var(--navy-blue);
+      font-size: 1.15rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .process-step {
+      background: white;
+      padding: var(--space-5);
+      border-radius: 12px;
+      border: 1px solid var(--silver-grey);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      margin-bottom: var(--space-4);
+    }
+
+    .process-step h3 {
+      color: var(--navy-blue);
+      font-size: 1.35rem;
+      margin-bottom: var(--space-3);
+    }
+  </style>
 </head>
 <body>
   <!-- Header Navigation -->
@@ -31,9 +84,8 @@
       <div class="main-nav">
         <ul>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/services.html">Work with Me</a></li>
+          <li><a href="/services.html">Work with Me 1:1</a></li>
           <li><a href="/practitioners.html">Business Services</a></li>
-          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -58,7 +110,7 @@
   </section>
 
   <!-- How It Works Section -->
-  <section style="background-color: var(--color-sunlight);">
+  <section class="brand-bg-cream">
     <div class="container content-section">
       <h2>A complementary service for your practice</h2>
       <p>Digital wellness design isn't a replacement for your work — it's a supportive layer that helps your recommendations land and stick.</p>
@@ -99,7 +151,7 @@
   </section>
 
   <!-- Collaboration Section -->
-  <section style="background-color: var(--color-sunlight);">
+  <section class="brand-bg-cream">
     <div class="container content-section">
       <h2>How we can work together</h2>
       <p>If you're a wellness practitioner interested in referring clients or exploring a collaboration, I'd love to connect.</p>
@@ -126,7 +178,7 @@
     <div class="container content-section text-center">
       <h2>Let's talk about supporting your clients</h2>
       <p>Reach out to discuss referral partnerships, collaborations, or workshop opportunities.</p>
-      <a href="/contact.html" class="btn btn-primary" style="margin-top: var(--space-3);">Get in Touch</a>
+      <a href="/about.html#contact" class="btn btn-primary" style="margin-top: var(--space-3);">Get in Touch</a>
     </div>
   </section>
 
@@ -138,9 +190,8 @@
 
       <div class="footer-links">
         <a href="/about.html">About</a>
-        <a href="/services.html">Work with Me</a>
+        <a href="/services.html">Work with Me 1:1</a>
         <a href="/practitioners.html">Business Services</a>
-        <a href="/contact.html">Contact</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
       </div>

@@ -22,6 +22,104 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/global.css">
+  <style>
+    /* Brand colors */
+    :root {
+      --deep-green: #2c7a7b;
+      --navy-blue: #1e2a47;
+      --warm-cream: #fff5ee;
+      --silver-grey: #e6e6e6;
+      --pink: #da72a3;
+      --light-blue: #7db4e8;
+      --soft-purple: #b39ddb;
+    }
+
+    /* Portrait section styling */
+    .portrait-section {
+      position: relative;
+      padding: var(--space-8) 0;
+      background: linear-gradient(135deg, var(--warm-cream) 0%, #faf8f6 100%);
+    }
+
+    .portrait-container {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .portrait-background {
+      position: relative;
+      background: linear-gradient(135deg, rgba(125, 180, 232, 0.12), rgba(179, 157, 219, 0.12));
+      border-radius: 16px;
+      padding: var(--space-6);
+      box-shadow: 0 8px 24px rgba(44, 122, 123, 0.08);
+    }
+
+    .portrait-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .portrait-sparkle {
+      position: absolute;
+      color: var(--soft-purple);
+      opacity: 0.5;
+      font-size: 0.9rem;
+    }
+
+    .portrait-sparkle.top-right {
+      top: 8%;
+      right: 5%;
+    }
+
+    .portrait-sparkle.bottom-left {
+      bottom: 8%;
+      left: 5%;
+    }
+
+    /* Contact section styling */
+    .contact-section {
+      background: white;
+      padding: var(--space-7) 0;
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 1.15rem;
+      color: var(--deep-green);
+      font-weight: 500;
+      padding: var(--space-4);
+      background: rgba(44, 122, 123, 0.05);
+      border-radius: 8px;
+      margin-top: var(--space-3);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-email:hover {
+      background: rgba(44, 122, 123, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Section styling with brand colors */
+    .brand-bg-cream {
+      background: var(--warm-cream);
+    }
+
+    @media (max-width: 768px) {
+      .portrait-container {
+        max-width: 90%;
+      }
+
+      .portrait-background {
+        padding: var(--space-4);
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header Navigation -->
@@ -31,9 +129,8 @@
       <div class="main-nav">
         <ul>
           <li><a href="/about.html">About</a></li>
-          <li><a href="/services.html">Work with Me</a></li>
+          <li><a href="/services.html">Work with Me 1:1</a></li>
           <li><a href="/practitioners.html">Business Services</a></li>
-          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -47,6 +144,17 @@
     </div>
   </section>
 
+  <!-- Portrait Section -->
+  <section class="portrait-section">
+    <div class="portrait-container">
+      <div class="portrait-background">
+        <span class="portrait-sparkle top-right">✦</span>
+        <img src="/assets/meg-portrait.jpg" alt="Meg Feil, Digital Wellness Designer" class="portrait-image">
+        <span class="portrait-sparkle bottom-left">✧</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Intro Section -->
   <section>
     <div class="container content-section">
@@ -56,8 +164,17 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container content-section" style="max-width: 700px; margin: 0 auto;">
+      <h2>Get in Touch</h2>
+      <p>Interested in working together or have questions? Reach out to discuss how digital wellness design can support your goals.</p>
+      <a href="mailto:meg@digitalwellnessdesign.com" class="contact-email">meg@digitalwellnessdesign.com</a>
+    </div>
+  </section>
+
   <!-- Background Section -->
-  <section style="background-color: var(--color-sunlight);">
+  <section class="brand-bg-cream">
     <div class="container content-section">
       <h2>Background</h2>
 
@@ -124,9 +241,8 @@
 
       <div class="footer-links">
         <a href="/about.html">About</a>
-        <a href="/services.html">Work with Me</a>
+        <a href="/services.html">Work with Me 1:1</a>
         <a href="/practitioners.html">Business Services</a>
-        <a href="/contact.html">Contact</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
       </div>
