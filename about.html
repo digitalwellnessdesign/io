@@ -25,98 +25,242 @@
   <style>
     /* Brand colors */
     :root {
-      --deep-green: #2c7a7b;
-      --navy-blue: #1e2a47;
+      --navy: #1e2a47;
+      --green: #2c7a7b;
+      --pink: #da72a3;
+      --purple: #b39ddb;
+      --light-blue: #7db4e8;
       --warm-cream: #fff5ee;
       --silver-grey: #e6e6e6;
-      --pink: #da72a3;
-      --light-blue: #7db4e8;
-      --soft-purple: #b39ddb;
     }
 
-    /* Portrait section styling */
-    .portrait-section {
-      position: relative;
-      padding: var(--space-8) 0;
-      background: linear-gradient(135deg, var(--warm-cream) 0%, #faf8f6 100%);
+    /* Hero Section */
+    .about-hero {
+      padding: var(--space-8) 0 var(--space-6);
+      background: linear-gradient(to bottom, #fafafa 0%, white 100%);
     }
 
-    .portrait-container {
-      max-width: 600px;
+    .about-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-2);
+      line-height: 1.2;
+    }
+
+    .about-hero .subtitle {
+      font-family: 'Loubag', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    /* Main Content Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: start;
+      max-width: 1100px;
       margin: 0 auto;
-      position: relative;
+      padding: var(--space-8) var(--space-4);
     }
 
-    .portrait-background {
-      position: relative;
-      background: linear-gradient(135deg, rgba(125, 180, 232, 0.12), rgba(179, 157, 219, 0.12));
-      border-radius: 16px;
-      padding: var(--space-6);
-      box-shadow: 0 8px 24px rgba(44, 122, 123, 0.08);
+    .about-content {
+      text-align: left;
     }
 
-    .portrait-image {
+    .about-content h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-5);
+      line-height: 1.3;
+    }
+
+    .about-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d3748;
+      margin-bottom: var(--space-4);
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Portrait Section */
+    .portrait-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .portrait-wrapper img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
       display: block;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     }
 
-    .portrait-sparkle {
+    .sparkle {
       position: absolute;
-      color: var(--soft-purple);
-      opacity: 0.5;
+      font-size: 1.2rem;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .sparkle-1 {
+      top: -5%;
+      left: -3%;
+      color: var(--pink);
+    }
+
+    .sparkle-2 {
+      top: 10%;
+      left: -6%;
+      color: var(--purple);
+      font-size: 1.5rem;
+    }
+
+    .sparkle-3 {
+      top: 25%;
+      left: -5%;
+      color: var(--purple);
       font-size: 0.9rem;
     }
 
-    .portrait-sparkle.top-right {
-      top: 8%;
-      right: 5%;
+    /* Background Cards */
+    .background-section {
+      background: var(--warm-cream);
+      padding: var(--space-8) var(--space-4);
     }
 
-    .portrait-sparkle.bottom-left {
-      bottom: 8%;
-      left: 5%;
+    .background-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
     }
 
-    /* Contact section styling */
+    .background-card {
+      background: white;
+      padding: var(--space-5);
+      border-radius: 8px;
+      border-left: 3px solid var(--light-blue);
+    }
+
+    .background-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-3);
+    }
+
+    .background-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #4a5568;
+    }
+
+    /* Contact Section */
     .contact-section {
       background: white;
-      padding: var(--space-7) 0;
-      text-align: center;
+      padding: var(--space-8) var(--space-4);
+      text-align: left;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-section h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-4);
+    }
+
+    .contact-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d3748;
+      margin-bottom: var(--space-4);
     }
 
     .contact-email {
       display: inline-block;
-      font-size: 1.15rem;
-      color: var(--deep-green);
+      font-size: 1.1rem;
+      color: var(--green);
       font-weight: 500;
-      padding: var(--space-4);
-      background: rgba(44, 122, 123, 0.05);
-      border-radius: 8px;
-      margin-top: var(--space-3);
+      padding: var(--space-3) var(--space-5);
+      background: rgba(44, 122, 123, 0.06);
+      border-radius: 6px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
 
     .contact-email:hover {
-      background: rgba(44, 122, 123, 0.1);
-      transform: translateY(-2px);
+      background: rgba(44, 122, 123, 0.12);
+      transform: translateY(-1px);
     }
 
-    /* Section styling with brand colors */
-    .brand-bg-cream {
-      background: var(--warm-cream);
-    }
-
-    @media (max-width: 768px) {
-      .portrait-container {
-        max-width: 90%;
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        padding: var(--space-6) var(--space-4);
       }
 
-      .portrait-background {
-        padding: var(--space-4);
+      .portrait-wrapper {
+        order: -1;
+        max-width: 400px;
+      }
+
+      .background-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+
+      .about-content h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-hero {
+        padding: var(--space-6) 0 var(--space-4);
+      }
+
+      .about-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .about-hero .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .portrait-wrapper {
+        max-width: 100%;
+      }
+
+      .background-section,
+      .contact-section {
+        padding: var(--space-6) var(--space-4);
       }
     }
   </style>
@@ -137,99 +281,63 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="about-hero">
     <div class="container">
       <h1>Meg Feil</h1>
-      <p style="font-family: 'Loubag', Georgia, serif; font-size: 1.25rem; color: var(--color-forest);">Digital Wellness Designer</p>
+      <p class="subtitle">Digital Wellness Designer</p>
     </div>
   </section>
 
-  <!-- Portrait Section -->
-  <section class="portrait-section">
-    <div class="portrait-container">
-      <div class="portrait-background">
-        <span class="portrait-sparkle top-right">✦</span>
-        <img src="/assets/meg-portrait.jpg" alt="Meg Feil, Digital Wellness Designer" class="portrait-image">
-        <span class="portrait-sparkle bottom-left">✧</span>
+  <!-- Main Content Grid -->
+  <section>
+    <div class="about-grid">
+      <div class="about-content">
+        <p class="intro-text">I design digital wellness systems for remote creatives.</p>
+
+        <h2>Your iPhone can support your wellness</h2>
+
+        <p>Think nudges towards your wellness goals instead of distractions. A screen that reflects your values, not just your notifications.</p>
+
+        <p>Remote creative since 2011 — the same year I got my first iPhone. I've worked in startup, academic, and corporate environments, and I understand how screens shape our days.</p>
+
+        <p>My work combines UX design, sociology, and wellness traditions to help you redesign your relationship with technology at the root.</p>
+      </div>
+
+      <div class="portrait-wrapper">
+        <span class="sparkle sparkle-1">✦</span>
+        <span class="sparkle sparkle-2">✧</span>
+        <span class="sparkle sparkle-3">✦</span>
+        <img src="/assets/megfeil.png" alt="Meg Feil, Digital Wellness Designer" width="500" height="667" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- Intro Section -->
-  <section>
-    <div class="container content-section">
-      <p class="section-intro">I design digital wellness systems for remote creatives.</p>
-      <p class="section-intro">Let's make your iPhone work for you. Think nudges towards your wellness goals instead of distractions.</p>
-      <p class="section-intro">Remote creative since 2011 (also the year I got my first iPhone!) with experience in startup, academic and corporate environments.</p>
+  <!-- Background Section -->
+  <section class="background-section">
+    <div class="background-grid">
+      <div class="background-card">
+        <h3>Writing & Design</h3>
+        <p>10+ years as a UX content designer creating systems that bridge digital and physical wellness — from mission-driven startups to Fortune 5 companies.</p>
+      </div>
+
+      <div class="background-card">
+        <h3>Social Sciences</h3>
+        <p>Master's degree in sociology, focused on health and technology. Sustainable change happens when we design for the whole human experience.</p>
+      </div>
+
+      <div class="background-card">
+        <h3>Nature & Healing Arts</h3>
+        <p>Yoga teacher (200hr), Ayurvedic health counselor (600hr), and self-study in Vedic astrology. Wellness is dynamic, cyclical, and connected to nature.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
-    <div class="container content-section" style="max-width: 700px; margin: 0 auto;">
+    <div class="contact-inner">
       <h2>Get in Touch</h2>
       <p>Interested in working together or have questions? Reach out to discuss how digital wellness design can support your goals.</p>
       <a href="mailto:meg@digitalwellnessdesign.com" class="contact-email">meg@digitalwellnessdesign.com</a>
-    </div>
-  </section>
-
-  <!-- Background Section -->
-  <section class="brand-bg-cream">
-    <div class="container content-section">
-      <h2>Background</h2>
-
-      <div class="process-step">
-        <h3>Writing and design</h3>
-        <p>For over 10 years, I've worked as a UX content designer on websites, apps, and experiences that bridge digital and physical wellness worlds. From small, mission-driven teams to a Fortune 5 company, I've used writing and design to create systems that feel intuitive, functional, and grounded in real needs.</p>
-      </div>
-
-      <div class="process-step">
-        <h3>Social sciences</h3>
-        <p>I hold a master's degree in sociology, with a focus on the intersection of health and technology. This gives me a deep lens on how cultural patterns, personal habits and systemic structures interact. Truly sustainable change happens when we design for the whole human experience, not just the surface.</p>
-      </div>
-
-      <div class="process-step">
-        <h3>Nature and healing arts</h3>
-        <p>I'm trained as a yoga teacher (200-hours), an Aurvedic health counselor (600-hours), and spent countless hours on self-study in Vedic astrology. These traditions inform my work with seasonal rhythms and understanding that wellness isn't one-size-fits-all — it's dynamic, cyclical, deeply personal and connected to nature.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section>
-    <div class="container content-section">
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h3>Tell me more, what exactly is a digital wellness designer?</h3>
-        <p>I help remote creatives transform their relationship with technology — specifically their iPhones — to support their health, focus, and meaningful living. It's about understanding your actual daily life rhythms, then redesigning your iPhone so it supportively nudges you towards your wellness goals and the ways you actually want to spend your time.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Who do you work with?</h3>
-        <p>Digital wellness design services are ideal for remote workers, digital nomads, creatives, entrepreneurs, or anyone who's craving more peace, focus, and flow with their devices — without giving up the tools that make their lives possible.</p>
-        <p>The main commonality among my clients is a genuine interest in focusing on their own wellness, and a true desire to consistently prioritize self-care in daily life, even during busy times.</p>
-        <p>If you already feel tech-savvy, great. My work isn't just about knowing how to use tech. It's about using it intentionally to match your season of life, your nervous system, and your bigger health and wellness goals. Even tech pros find new depth and clarity through this process.</p>
-        <p>If you do not consider yourself tech-savvy, that's cool too! You can expect to learn a bit more about the possibilities your tech has, and, don't worry, I'm happy to guide you every step of the way.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Do you only work with Apple/iPhone users?</h3>
-        <p>Right now, yes — because the customization tools and routines I design are tailored for the iPhone ecosystem. But, who knows, maybe Android someday!</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Do you need access to my iPhone?</h3>
-        <p>No, your phone is yours. I'll provide visual illustrations or mockups to show you how I recommend your phone should look — which apps go where, widgets to use, automations to set up, and visual changes to your background and more. Depending on the service, you'll receive instructions emailed to you, and, if needed, live walkthroughs on our call. Either way, you'll be set up to easily make these changes yourself.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Are you a health practitioner?</h3>
-        <p>No, I am not a health practitioner or medical provider. I do not offer diets, supplements or any medical advice.</p>
-        <p>I do, however, recommend lifestyle habits and rituals for wellness. For example, I commonly recommend ways to reduce stress from screens and prioritize nervous system regulation.</p>
-        <p>In my own experience working with many, many medical doctors and holistic practitioners alike, they tell you what you need. Not always how to realistically make those lifestyle changes happen. That's where my role comes in.</p>
-        <p>Think of digital wellness as a sidekick or consultant role that helps amplify your capacity to do the things your holistic wellness coach or anyone else is recommending you to do.</p>
-      </div>
     </div>
   </section>
 
