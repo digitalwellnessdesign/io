@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Wellness Practitioners | Digital Wellness Design</title>
-  <meta name="description" content="Partner with Digital Wellness Design to support your clients with iPhone redesigns that reinforce their wellness plans and help lifestyle changes stick.">
+  <title>Business Services — Websites for Wellness Practitioners | Digital Wellness Design</title>
+  <meta name="description" content="Simple, high-quality websites for wellness practitioners. Plus client support, workshops, and digital wellness consulting.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="For Wellness Practitioners | Digital Wellness Design">
-  <meta property="og:description" content="Partner with Digital Wellness Design to support your clients with technology that reinforces their wellness plans.">
+  <meta property="og:title" content="Business Services — Websites for Wellness Practitioners">
+  <meta property="og:description" content="Simple, high-quality websites for wellness practitioners and digital wellness support services.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.digitalwellnessdesign.com/practitioners.html">
 
@@ -25,54 +25,246 @@
   <style>
     /* Brand colors */
     :root {
-      --deep-green: #2c7a7b;
-      --navy-blue: #1e2a47;
+      --navy: #1e2a47;
+      --green: #2c7a7b;
+      --pink: #da72a3;
+      --purple: #b39ddb;
+      --light-blue: #7db4e8;
       --warm-cream: #fff5ee;
       --silver-grey: #e6e6e6;
-      --pink: #da72a3;
-      --light-blue: #7db4e8;
-      --soft-purple: #b39ddb;
     }
 
-    /* Section styling with brand colors */
-    .brand-bg-cream {
-      background: var(--warm-cream);
+    /* Hero Section */
+    .business-hero {
+      padding: var(--space-8) 0;
+      background: linear-gradient(to bottom, #fafafa 0%, white 100%);
+      position: relative;
     }
 
-    .feature-block {
-      background: white;
-      padding: var(--space-5);
-      border-radius: 12px;
-      margin-bottom: var(--space-4);
-      border-left: 4px solid var(--light-blue);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
+    .business-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-3);
+      line-height: 1.2;
     }
 
-    .feature-block:hover {
-      border-left-color: var(--deep-green);
-      box-shadow: 0 4px 16px rgba(44, 122, 123, 0.1);
-    }
-
-    .feature-block h3 {
-      color: var(--navy-blue);
+    .business-hero .subtitle {
       font-size: 1.15rem;
+      line-height: 1.6;
+      color: #4a5568;
+      max-width: 650px;
+    }
+
+    .sparkle-accent {
+      position: absolute;
+      font-size: 1.2rem;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .sparkle-1 { top: 10%; right: 15%; color: var(--pink); }
+    .sparkle-2 { top: 25%; right: 10%; color: var(--purple); font-size: 0.9rem; }
+
+    /* Services Section */
+    .services-section {
+      padding: var(--space-8) var(--space-4);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Primary Service Card */
+    .primary-service {
+      background: white;
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      padding: var(--space-7);
+      margin-bottom: var(--space-8);
+      position: relative;
+    }
+
+    .primary-service::before {
+      content: '✦';
+      position: absolute;
+      top: -10px;
+      right: var(--space-6);
+      font-size: 1.5rem;
+      color: var(--green);
+      opacity: 0.6;
+    }
+
+    .service-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(44, 122, 123, 0.08);
+      padding: var(--space-1) var(--space-3);
+      border-radius: 4px;
+      margin-bottom: var(--space-4);
+    }
+
+    .primary-service h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-4);
+      line-height: 1.3;
+    }
+
+    .primary-service p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d3748;
+      margin-bottom: var(--space-4);
+    }
+
+    .primary-service ul {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-5) 0;
+    }
+
+    .primary-service ul li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #4a5568;
+      padding-left: var(--space-5);
+      margin-bottom: var(--space-3);
+      position: relative;
+    }
+
+    .primary-service ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* Supporting Services Grid */
+    .supporting-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-8);
+    }
+
+    .service-card {
+      background: var(--warm-cream);
+      border-radius: 8px;
+      padding: var(--space-6);
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-3);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #4a5568;
+    }
+
+    .service-icon {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-3);
+      display: block;
+      opacity: 0.7;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: white;
+      padding: var(--space-8) var(--space-4);
+      text-align: left;
+    }
+
+    .cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-6);
+    }
+
+    .cta-text h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--navy);
       margin-bottom: var(--space-2);
     }
 
-    .process-step {
-      background: white;
-      padding: var(--space-5);
-      border-radius: 12px;
-      border: 1px solid var(--silver-grey);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      margin-bottom: var(--space-4);
+    .cta-text p {
+      font-size: 1.05rem;
+      color: #4a5568;
     }
 
-    .process-step h3 {
-      color: var(--navy-blue);
-      font-size: 1.35rem;
-      margin-bottom: var(--space-3);
+    .cta-button {
+      flex-shrink: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .business-hero h1 {
+        font-size: 2rem;
+      }
+
+      .supporting-services {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .primary-service {
+        padding: var(--space-6);
+      }
+
+      .primary-service h2 {
+        font-size: 1.6rem;
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .sparkle-accent {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .business-hero {
+        padding: var(--space-6) 0;
+      }
+
+      .business-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .primary-service h2 {
+        font-size: 1.4rem;
+      }
+
+      .services-section {
+        padding: var(--space-6) var(--space-4);
+      }
+
+      .cta-section {
+        padding: var(--space-6) var(--space-4);
+      }
     }
   </style>
 </head>
@@ -92,93 +284,66 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="business-hero">
+    <span class="sparkle-accent sparkle-1">✦</span>
+    <span class="sparkle-accent sparkle-2">✧</span>
     <div class="container">
-      <h1>For Wellness Practitioners</h1>
-      <p>Help your clients make lifestyle changes stick with technology that supports their wellness plans.</p>
+      <h1>Business Services</h1>
+      <p class="subtitle">Simple, high-quality websites for wellness practitioners. Plus digital wellness support for your clients and team.</p>
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section>
-    <div class="container content-section">
-      <h2>You know what your clients need. Digital wellness helps them actually do it.</h2>
-      <p>As a wellness practitioner, you guide your clients toward healthier habits — better sleep, consistent movement, stress reduction, mindful eating, or daily rituals that support their goals.</p>
-      <p>But here's the challenge: they reach for their phone 150+ times a day, and often that same device becomes the biggest barrier to following through.</p>
-      <p>That's where digital wellness design comes in.</p>
-    </div>
-  </section>
+  <!-- Services Section -->
+  <section class="services-section">
+    <!-- Primary Service -->
+    <div class="primary-service">
+      <span class="service-tag">Primary Offering</span>
+      <h2>Websites for Wellness Practitioners</h2>
+      <p>Clean, professional websites designed for coaches, therapists, yoga teachers, healers, and holistic practitioners who want an online presence that feels aligned with their work.</p>
 
-  <!-- How It Works Section -->
-  <section class="brand-bg-cream">
-    <div class="container content-section">
-      <h2>A complementary service for your practice</h2>
-      <p>Digital wellness design isn't a replacement for your work — it's a supportive layer that helps your recommendations land and stick.</p>
-
-      <div class="process-step">
-        <h3>For nutritionists and health coaches</h3>
-        <p>Your client wants to meal prep on Sundays, drink more water, or avoid late-night snacking. Their iPhone can send gentle reminders, block distracting apps during meal times, and create focus modes that support their eating windows.</p>
-      </div>
-
-      <div class="process-step">
-        <h3>For therapists and mental health practitioners</h3>
-        <p>Your client is working on setting boundaries, grounding practices, or reducing anxious scrolling. Their phone can be redesigned to support morning journaling routines, limit social media access during vulnerable hours, and automate calming transitions between work and rest.</p>
-      </div>
-
-      <div class="process-step">
-        <h3>For yoga teachers and movement specialists</h3>
-        <p>Your client wants to stretch daily, take walking breaks, or create a consistent practice. Their iPhone can prompt movement at natural energy dips, hide distractions during practice time, and make it easier to choose grounding over scrolling.</p>
-      </div>
-
-      <div class="process-step">
-        <h3>For sleep coaches and nervous system specialists</h3>
-        <p>Your client needs to wind down earlier, reduce blue light exposure, and create evening rituals. Their phone can automate red light filters at sunset, silence notifications after a certain hour, and offer gentle cues that support rest instead of stimulation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section>
-    <div class="container content-section">
-      <h2>Why refer clients to digital wellness design?</h2>
-      <ul class="bullet-list">
-        <li>Your clients get personalized tech support that reinforces your recommendations</li>
-        <li>You don't have to become a tech expert — that's my role</li>
-        <li>Clients see faster progress when their environment (including their phone) supports their goals</li>
-        <li>This creates a seamless extension of your care without adding to your workload</li>
+      <ul>
+        <li>Custom design that reflects your unique approach and values</li>
+        <li>Simple, intuitive structure — easy for clients to navigate</li>
+        <li>Mobile-responsive and performance-optimized</li>
+        <li>Clear service descriptions, booking integration, and contact forms</li>
+        <li>Built with care and attention to detail</li>
       </ul>
+
+      <p>Whether you're launching a new practice or refreshing your existing site, I create websites that feel calm, confident, and welcoming.</p>
     </div>
-  </section>
 
-  <!-- Collaboration Section -->
-  <section class="brand-bg-cream">
-    <div class="container content-section">
-      <h2>How we can work together</h2>
-      <p>If you're a wellness practitioner interested in referring clients or exploring a collaboration, I'd love to connect.</p>
-
-      <div class="feature-block">
-        <h3>Client referrals</h3>
-        <p>Refer your clients for iPhone Ritual Reset sessions that align with their wellness plans. They'll receive personalized tech support that reinforces the habits you're helping them build.</p>
+    <!-- Supporting Services -->
+    <div class="supporting-services">
+      <div class="service-card">
+        <span class="service-icon">✧</span>
+        <h3>Client Referrals</h3>
+        <p>Refer your clients for iPhone wellness sessions that reinforce the habits and routines you're helping them build.</p>
       </div>
 
-      <div class="feature-block">
-        <h3>Collaborative packages</h3>
-        <p>For practitioners who want to offer a more integrated experience, we can explore bundled services that combine your expertise with digital wellness design.</p>
+      <div class="service-card">
+        <span class="service-icon">✦</span>
+        <h3>Workshops & Speaking</h3>
+        <p>Guest teaching and workshops on digital wellness, nervous system regulation, and intentional tech use.</p>
       </div>
 
-      <div class="feature-block">
-        <h3>Workshops and speaking</h3>
-        <p>I'm available for workshops, guest teaching, or speaking engagements about how technology can support wellness practices and nervous system regulation.</p>
+      <div class="service-card">
+        <span class="service-icon">✧</span>
+        <h3>Team Consulting</h3>
+        <p>Digital wellness strategy for your team — help your staff build healthier tech habits that support focus and wellbeing.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section>
-    <div class="container content-section text-center">
-      <h2>Let's talk about supporting your clients</h2>
-      <p>Reach out to discuss referral partnerships, collaborations, or workshop opportunities.</p>
-      <a href="/about.html#contact" class="btn btn-primary" style="margin-top: var(--space-3);">Get in Touch</a>
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Let's talk about your project</h2>
+        <p>Reach out to discuss website design, partnerships, or digital wellness support.</p>
+      </div>
+      <div class="cta-button">
+        <a href="/about.html#contact" class="btn btn-primary">Get in Touch</a>
+      </div>
     </div>
   </section>
 
