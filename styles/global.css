@@ -33,17 +33,24 @@ body {
 
 /* ===== DESIGN TOKENS ===== */
 :root {
-  /* Colors */
-  --color-cream: #FAF8F5;
-  --color-sand: #E8E3DA;
+  /* Strict Brand Colors */
+  --navy: #1e2a47;
+  --teal: #2c7a7b;
+  --pink: #da72a3;
+  --purple: #b39ddb;
+  --light-blue: #7db4e8;
+  --warm-cream: #fff5ee;
+  --silver-grey: #e6e6e6;
+
+  /* Semantic color mappings */
+  --color-charcoal: var(--navy);
+  --color-forest: var(--teal);
+  --color-sage: var(--light-blue);
+  --color-stone: #4a5568;
   --color-warm-gray: #9D9789;
-  --color-stone: #6B6557;
-  --color-charcoal: #1e2a47;
-  --color-sage: #7db4e8;
-  --color-forest: #2c7a7b;
-  --color-terracotta: #C17A5F;
-  --color-sunlight: #F5E6D3;
-  --color-sunrise: #FFD4A3;
+  --color-sand: var(--silver-grey);
+  --color-cream: var(--warm-cream);
+  --color-sunlight: var(--warm-cream);
 
   /* Spacing (8px base unit) */
   --space-1: 0.5rem;   /* 8px */
