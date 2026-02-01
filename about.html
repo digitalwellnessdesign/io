@@ -40,19 +40,29 @@
       background: linear-gradient(to bottom, #fafafa 0%, white 100%);
     }
 
+    .about-hero .page-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-2);
+      display: block;
+    }
+
     .about-hero h1 {
       font-size: 2.5rem;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: var(--space-2);
+      margin-bottom: var(--space-4);
       line-height: 1.2;
     }
 
-    .about-hero .subtitle {
-      font-family: 'Loubag', Georgia, serif;
-      font-size: 1.25rem;
-      color: var(--green);
-      font-weight: 400;
+    .about-hero .intro-copy {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #2d3748;
+      max-width: 650px;
     }
 
     /* Main Content Grid */
@@ -87,13 +97,6 @@
 
     .about-content p:last-child {
       margin-bottom: 0;
-    }
-
-    .intro-text {
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--navy);
-      margin-bottom: var(--space-6);
     }
 
     /* Portrait Section */
@@ -250,8 +253,8 @@
         font-size: 1.75rem;
       }
 
-      .about-hero .subtitle {
-        font-size: 1.1rem;
+      .about-hero .intro-copy {
+        font-size: 1rem;
       }
 
       .portrait-wrapper {
@@ -283,8 +286,9 @@
   <!-- Hero Section -->
   <section class="about-hero">
     <div class="container">
-      <h1>Meg Feil</h1>
-      <p class="subtitle">Digital Wellness Designer</p>
+      <span class="page-label">About</span>
+      <h1>Meg Feil — Digital Wellness Designer</h1>
+      <p class="intro-copy">I help individuals reshape their relationship with tech for their wellness, starting with the iPhone they use every day.</p>
     </div>
   </section>
 
@@ -292,8 +296,6 @@
   <section>
     <div class="about-grid">
       <div class="about-content">
-        <p class="intro-text">I design digital wellness systems for remote creatives.</p>
-
         <h2>Your iPhone can support your wellness</h2>
 
         <p>Think nudges towards your wellness goals instead of distractions. A screen that reflects your values, not just your notifications.</p>

@@ -36,23 +36,33 @@
 
     /* Hero Section */
     .business-hero {
-      padding: var(--space-8) 0;
+      padding: var(--space-8) 0 var(--space-6);
       background: linear-gradient(to bottom, #fafafa 0%, white 100%);
       position: relative;
+    }
+
+    .business-hero .page-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-2);
+      display: block;
     }
 
     .business-hero h1 {
       font-size: 2.5rem;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-4);
       line-height: 1.2;
     }
 
-    .business-hero .subtitle {
+    .business-hero .intro-copy {
       font-size: 1.15rem;
       line-height: 1.6;
-      color: #4a5568;
+      color: #2d3748;
       max-width: 650px;
     }
 
@@ -238,11 +248,15 @@
 
     @media (max-width: 640px) {
       .business-hero {
-        padding: var(--space-6) 0;
+        padding: var(--space-6) 0 var(--space-4);
       }
 
       .business-hero h1 {
         font-size: 1.75rem;
+      }
+
+      .business-hero .intro-copy {
+        font-size: 1rem;
       }
 
       .primary-service h2 {
@@ -279,8 +293,9 @@
     <span class="sparkle-accent sparkle-1">✦</span>
     <span class="sparkle-accent sparkle-2">✧</span>
     <div class="container">
-      <h1>Business Services</h1>
-      <p class="subtitle">Simple, high-quality websites for wellness practitioners. Plus digital wellness support for your clients and team.</p>
+      <span class="page-label">For Businesses</span>
+      <h1>Websites and More Services</h1>
+      <p class="intro-copy">I help wellness-centered businesses create calm, clear digital foundations.</p>
     </div>
   </section>
 
