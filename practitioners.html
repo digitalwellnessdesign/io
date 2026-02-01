@@ -49,7 +49,7 @@
 
     /* Hero Section */
     .business-hero {
-      padding: calc(var(--space-8) * 1.2) 0 var(--space-8);
+      padding: calc(var(--space-8) * 1.2) var(--space-4) var(--space-8);
       background: transparent;
       position: relative;
       overflow: hidden;
@@ -79,7 +79,9 @@
       border-radius: 50%;
     }
 
-    .business-hero .container {
+    .business-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
       position: relative;
       z-index: 2;
     }
@@ -390,7 +392,7 @@
 
     @media (max-width: 640px) {
       .business-hero {
-        padding: var(--space-7) 0 var(--space-6);
+        padding: var(--space-7) var(--space-4) var(--space-6);
       }
 
       .business-hero h1 {
@@ -436,7 +438,7 @@
     <span class="sparkle-accent sparkle-2" aria-hidden="true">✧</span>
     <span class="sparkle-accent sparkle-3" aria-hidden="true">✦</span>
     <span class="sparkle-accent sparkle-4" aria-hidden="true">✧</span>
-    <div class="container">
+    <div class="business-hero-inner">
       <span class="page-label">For Businesses</span>
       <h1>Websites and More</h1>
       <p class="intro-copy">If you're a wellness-centered business, I'll help you create calm, clear digital foundations.</p>
