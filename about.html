@@ -37,7 +37,38 @@
     /* Hero Section */
     .about-hero {
       padding: var(--space-8) 0 var(--space-6);
-      background: linear-gradient(to bottom, #fafafa 0%, white 100%);
+      background: linear-gradient(135deg, var(--warm-cream) 0%, #f8f9fa 50%, var(--silver-grey) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
+      opacity: 0.06;
+      border-radius: 50%;
+    }
+
+    .about-hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .about-hero .page-label {
@@ -74,6 +105,21 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: var(--space-8) var(--space-4);
+      background: white;
+      position: relative;
+    }
+
+    .about-grid::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--pink) 0%, transparent 70%);
+      opacity: 0.04;
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .about-content {
@@ -115,35 +161,121 @@
 
     .sparkle {
       position: absolute;
-      font-size: 1.2rem;
-      opacity: 0.6;
+      opacity: 0.3;
       pointer-events: none;
+      animation: twinkle-slow 4s ease-in-out infinite;
+    }
+
+    @keyframes twinkle-slow {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sparkle { animation: none; }
     }
 
     .sparkle-1 {
       top: -5%;
       left: -3%;
       color: var(--pink);
+      font-size: 1.8rem;
+      animation-delay: 0s;
     }
 
     .sparkle-2 {
       top: 10%;
       left: -6%;
       color: var(--purple);
-      font-size: 1.5rem;
+      font-size: 2rem;
+      animation-delay: 1.5s;
     }
 
     .sparkle-3 {
       top: 25%;
       left: -5%;
+      color: var(--light-blue);
+      font-size: 1.2rem;
+      animation-delay: 3s;
+    }
+
+    .sparkle-4 {
+      top: 50%;
+      right: -4%;
+      color: var(--pink);
+      font-size: 1.5rem;
+      animation-delay: 0.5s;
+    }
+
+    .sparkle-5 {
+      bottom: 10%;
+      left: -3%;
       color: var(--purple);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      animation-delay: 2s;
+    }
+
+    .hero-sparkle {
+      position: absolute;
+      opacity: 0.25;
+      pointer-events: none;
+      animation: twinkle-slow 5s ease-in-out infinite;
+    }
+
+    .hero-sparkle-1 {
+      top: 15%;
+      right: 20%;
+      font-size: 2rem;
+      color: var(--light-blue);
+      animation-delay: 0s;
+    }
+
+    .hero-sparkle-2 {
+      top: 60%;
+      right: 15%;
+      font-size: 1.2rem;
+      color: var(--pink);
+      animation-delay: 2s;
+    }
+
+    .hero-sparkle-3 {
+      bottom: 20%;
+      left: 15%;
+      font-size: 1.5rem;
+      color: var(--purple);
+      animation-delay: 1s;
     }
 
     /* Background Cards */
     .background-section {
-      background: var(--warm-cream);
+      background: linear-gradient(180deg, white 0%, var(--warm-cream) 50%, white 100%);
       padding: var(--space-8) var(--space-4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-section::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+      opacity: 0.06;
+      border-radius: 50%;
+    }
+
+    .background-section::after {
+      content: '';
+      position: absolute;
+      bottom: 10%;
+      left: -5%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
+      opacity: 0.05;
+      border-radius: 50%;
     }
 
     .background-grid {
@@ -152,13 +284,49 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-5);
+      position: relative;
+      z-index: 2;
     }
 
     .background-card {
-      background: white;
+      background: linear-gradient(135deg, white 0%, rgba(255, 245, 238, 0.3) 100%);
       padding: var(--space-5);
-      border-radius: 8px;
+      border-radius: 12px;
       border-left: 3px solid var(--light-blue);
+      border: 1px solid rgba(230, 230, 230, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .background-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(30, 42, 71, 0.08);
+      border-left-color: var(--green);
+    }
+
+    .background-card:hover::after {
+      opacity: 0.05;
+    }
+
+    .background-card:nth-child(2) {
+      border-left-color: var(--green);
+    }
+
+    .background-card:nth-child(3) {
+      border-left-color: var(--pink);
     }
 
     .background-card h3 {
@@ -176,9 +344,23 @@
 
     /* Contact Section */
     .contact-section {
-      background: white;
+      background: linear-gradient(135deg, white 0%, var(--warm-cream) 100%);
       padding: var(--space-8) var(--space-4);
       text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--pink) 0%, transparent 70%);
+      opacity: 0.05;
+      border-radius: 50%;
     }
 
     .contact-inner {
@@ -203,18 +385,20 @@
     .contact-email {
       display: inline-block;
       font-size: 1.1rem;
-      color: var(--green);
+      color: white;
       font-weight: 500;
       padding: var(--space-3) var(--space-5);
-      background: rgba(44, 122, 123, 0.06);
-      border-radius: 6px;
+      background: linear-gradient(135deg, var(--green) 0%, var(--light-blue) 100%);
+      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(44, 122, 123, 0.2);
     }
 
     .contact-email:hover {
-      background: rgba(44, 122, 123, 0.12);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(44, 122, 123, 0.3);
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--green) 100%);
     }
 
     /* Responsive Design */
@@ -285,6 +469,9 @@
 
   <!-- Hero Section -->
   <section class="about-hero">
+    <div class="hero-sparkle hero-sparkle-1" aria-hidden="true">✦</div>
+    <div class="hero-sparkle hero-sparkle-2" aria-hidden="true">✧</div>
+    <div class="hero-sparkle hero-sparkle-3" aria-hidden="true">✦</div>
     <div class="container">
       <span class="page-label">About</span>
       <h1>Your Co-Designer</h1>
@@ -306,6 +493,11 @@
       </div>
 
       <div class="portrait-wrapper">
+        <div class="sparkle sparkle-1" aria-hidden="true">✦</div>
+        <div class="sparkle sparkle-2" aria-hidden="true">✧</div>
+        <div class="sparkle sparkle-3" aria-hidden="true">✦</div>
+        <div class="sparkle sparkle-4" aria-hidden="true">✧</div>
+        <div class="sparkle sparkle-5" aria-hidden="true">✦</div>
         <img src="/assets/megfeil.png" alt="Meg Feil, Digital Wellness Designer" width="500" height="667" loading="lazy">
       </div>
     </div>

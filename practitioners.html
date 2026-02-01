@@ -37,8 +37,38 @@
     /* Hero Section */
     .business-hero {
       padding: var(--space-8) 0 var(--space-6);
-      background: linear-gradient(to bottom, #fafafa 0%, white 100%);
+      background: linear-gradient(135deg, var(--warm-cream) 0%, #f8f9fa 50%, var(--silver-grey) 100%);
       position: relative;
+      overflow: hidden;
+    }
+
+    .business-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .business-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+      opacity: 0.06;
+      border-radius: 50%;
+    }
+
+    .business-hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .business-hero .page-label {
@@ -68,29 +98,84 @@
 
     .sparkle-accent {
       position: absolute;
-      font-size: 1.2rem;
-      opacity: 0.4;
+      opacity: 0.25;
       pointer-events: none;
+      animation: twinkle-slow 4s ease-in-out infinite;
     }
 
-    .sparkle-1 { top: 10%; right: 15%; color: var(--pink); }
-    .sparkle-2 { top: 25%; right: 10%; color: var(--purple); font-size: 0.9rem; }
+    @keyframes twinkle-slow {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sparkle-accent { animation: none; }
+    }
+
+    .sparkle-1 {
+      top: 10%;
+      right: 15%;
+      color: var(--pink);
+      font-size: 2rem;
+      animation-delay: 0s;
+    }
+
+    .sparkle-2 {
+      top: 25%;
+      right: 10%;
+      color: var(--purple);
+      font-size: 1.5rem;
+      animation-delay: 2s;
+    }
+
+    .sparkle-3 {
+      bottom: 30%;
+      left: 12%;
+      color: var(--light-blue);
+      font-size: 1.8rem;
+      animation-delay: 1s;
+    }
+
+    .sparkle-4 {
+      top: 60%;
+      right: 18%;
+      color: var(--pink);
+      font-size: 1.2rem;
+      animation-delay: 3s;
+    }
 
     /* Services Section */
     .services-section {
       padding: var(--space-8) var(--space-4);
       max-width: 1100px;
       margin: 0 auto;
+      background: white;
+      position: relative;
+    }
+
+    .services-section::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--pink) 0%, transparent 70%);
+      opacity: 0.04;
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     /* Primary Service Card */
     .primary-service {
-      background: white;
+      background: linear-gradient(135deg, white 0%, rgba(255, 245, 238, 0.4) 100%);
       border: 2px solid var(--navy);
       border-radius: 12px;
       padding: var(--space-7);
       margin-bottom: var(--space-8);
       position: relative;
+      box-shadow: 0 8px 24px rgba(30, 42, 71, 0.06);
+      overflow: hidden;
     }
 
     .primary-service::before {
@@ -98,9 +183,22 @@
       position: absolute;
       top: -10px;
       right: var(--space-6);
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: var(--navy);
-      opacity: 0.6;
+      opacity: 0.5;
+      animation: twinkle-slow 5s ease-in-out infinite;
+    }
+
+    .primary-service::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+      opacity: 0.06;
+      border-radius: 50%;
     }
 
     .service-tag {
@@ -154,15 +252,35 @@
     }
 
     .service-card {
-      background: var(--warm-cream);
-      border-radius: 8px;
+      background: linear-gradient(135deg, var(--warm-cream) 0%, white 100%);
+      border-radius: 12px;
       padding: var(--space-6);
       text-align: left;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(230, 230, 230, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(30, 42, 71, 0.1);
+    }
+
+    .service-card:hover::after {
+      opacity: 0.05;
     }
 
     .service-card h3 {
@@ -179,17 +297,47 @@
     }
 
     .service-icon {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-bottom: var(--space-3);
       display: block;
-      opacity: 0.7;
+      opacity: 0.6;
+      animation: twinkle-slow 4s ease-in-out infinite;
+    }
+
+    .service-card:nth-child(1) .service-icon {
+      color: var(--light-blue);
+      animation-delay: 0s;
+    }
+
+    .service-card:nth-child(2) .service-icon {
+      color: var(--pink);
+      animation-delay: 1.5s;
+    }
+
+    .service-card:nth-child(3) .service-icon {
+      color: var(--purple);
+      animation-delay: 3s;
     }
 
     /* CTA Section */
     .cta-section {
-      background: white;
+      background: linear-gradient(135deg, white 0%, var(--warm-cream) 100%);
       padding: var(--space-8) var(--space-4);
       text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 70%);
+      opacity: 0.05;
+      border-radius: 50%;
     }
 
     .cta-inner {
@@ -290,8 +438,10 @@
 
   <!-- Hero Section -->
   <section class="business-hero">
-    <span class="sparkle-accent sparkle-1">✦</span>
-    <span class="sparkle-accent sparkle-2">✧</span>
+    <span class="sparkle-accent sparkle-1" aria-hidden="true">✦</span>
+    <span class="sparkle-accent sparkle-2" aria-hidden="true">✧</span>
+    <span class="sparkle-accent sparkle-3" aria-hidden="true">✦</span>
+    <span class="sparkle-accent sparkle-4" aria-hidden="true">✧</span>
     <div class="container">
       <span class="page-label">For Businesses</span>
       <h1>Websites and More</h1>
