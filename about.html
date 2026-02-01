@@ -49,8 +49,12 @@
 
     /* Hero Section */
     .about-hero {
-      padding: calc(var(--space-8) * 1.2) var(--space-4) var(--space-8);
-      background: transparent;
+      padding: calc(var(--space-8) * 1.2) var(--space-4) var(--space-6);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 245, 238, 0.6) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
       position: relative;
       overflow: hidden;
     }
@@ -63,19 +67,19 @@
       width: 450px;
       height: 450px;
       background: radial-gradient(circle, var(--light-blue) 0%, transparent 65%);
-      opacity: 0.06;
+      opacity: 0.08;
       border-radius: 50%;
     }
 
     .about-hero::after {
       content: '';
       position: absolute;
-      bottom: -20%;
+      bottom: -15%;
       left: -8%;
       width: 500px;
       height: 500px;
       background: radial-gradient(circle, var(--purple) 0%, transparent 68%);
-      opacity: 0.04;
+      opacity: 0.06;
       border-radius: 50%;
     }
 
@@ -114,6 +118,31 @@
     }
 
     /* Main Content Grid */
+    .about-grid-wrapper {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.8) 40%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      padding: var(--space-7) var(--space-4) var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-grid-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: -8%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--pink) 0%, transparent 65%);
+      opacity: 0.04;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -121,22 +150,8 @@
       align-items: start;
       max-width: 1100px;
       margin: 0 auto;
-      padding: var(--space-9) var(--space-4) var(--space-8);
-      background: transparent;
       position: relative;
-    }
-
-    .about-grid::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: -8%;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, var(--pink) 0%, transparent 65%);
-      opacity: 0.03;
-      border-radius: 50%;
-      pointer-events: none;
+      z-index: 2;
     }
 
     .about-content {
@@ -265,8 +280,13 @@
 
     /* Background Cards */
     .background-section {
-      background: transparent;
-      padding: var(--space-9) var(--space-4) var(--space-8);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 245, 238, 0.4) 50%,
+        rgba(255, 255, 255, 0.6) 100%
+      );
+      padding: var(--space-8) var(--space-4) var(--space-9);
       position: relative;
       overflow: hidden;
     }
@@ -274,24 +294,24 @@
     .background-section::before {
       content: '';
       position: absolute;
-      top: 25%;
+      top: 20%;
       right: -8%;
       width: 420px;
       height: 420px;
       background: radial-gradient(circle, var(--light-blue) 0%, transparent 68%);
-      opacity: 0.04;
+      opacity: 0.05;
       border-radius: 50%;
     }
 
     .background-section::after {
       content: '';
       position: absolute;
-      bottom: 15%;
+      bottom: 10%;
       left: -6%;
       width: 380px;
       height: 380px;
-      background: radial-gradient(circle, var(--purple) 0%, transparent 65%);
-      opacity: 0.035;
+      background: radial-gradient(circle, var(--green) 0%, transparent 65%);
+      opacity: 0.04;
       border-radius: 50%;
     }
 
@@ -339,7 +359,11 @@
 
     /* Contact Section */
     .contact-section {
-      background: transparent;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 245, 238, 0.5) 100%
+      );
       padding: var(--space-9) var(--space-4) var(--space-9);
       text-align: left;
       position: relative;
@@ -349,18 +373,20 @@
     .contact-section::before {
       content: '';
       position: absolute;
-      top: 30%;
+      top: 20%;
       right: 5%;
-      width: 340px;
-      height: 340px;
+      width: 380px;
+      height: 380px;
       background: radial-gradient(circle, var(--pink) 0%, transparent 68%);
-      opacity: 0.04;
+      opacity: 0.06;
       border-radius: 50%;
     }
 
     .contact-inner {
       max-width: 1100px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-section h2 {
@@ -401,7 +427,6 @@
       .about-grid {
         grid-template-columns: 1fr;
         gap: var(--space-7);
-        padding: var(--space-8) var(--space-4) var(--space-7);
       }
 
       .portrait-wrapper {
@@ -425,7 +450,7 @@
 
     @media (max-width: 640px) {
       .about-hero {
-        padding: var(--space-7) var(--space-4) var(--space-6);
+        padding: var(--space-7) var(--space-4) var(--space-5);
       }
 
       .about-hero h1 {
@@ -440,16 +465,16 @@
         max-width: 100%;
       }
 
-      .about-grid {
-        padding: var(--space-7) var(--space-4) var(--space-6);
+      .about-grid-wrapper {
+        padding: var(--space-6) var(--space-4) var(--space-7);
       }
 
       .background-section {
-        padding: var(--space-7) var(--space-4) var(--space-6);
+        padding: var(--space-7) var(--space-4) var(--space-8);
       }
 
       .contact-section {
-        padding: var(--space-7) var(--space-4) var(--space-8);
+        padding: var(--space-8) var(--space-4) var(--space-8);
       }
 
       .hero-sparkle,
@@ -487,7 +512,7 @@
   </section>
 
   <!-- Main Content Grid -->
-  <section>
+  <section class="about-grid-wrapper">
     <div class="about-grid">
       <div class="about-content">
         <h2>Hi! I'm Meg Feil</h2>

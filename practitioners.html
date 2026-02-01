@@ -49,8 +49,12 @@
 
     /* Hero Section */
     .business-hero {
-      padding: calc(var(--space-8) * 1.2) var(--space-4) var(--space-8);
-      background: transparent;
+      padding: calc(var(--space-8) * 1.2) var(--space-4) var(--space-6);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 245, 238, 0.6) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
       position: relative;
       overflow: hidden;
     }
@@ -63,19 +67,19 @@
       width: 480px;
       height: 480px;
       background: radial-gradient(circle, var(--purple) 0%, transparent 66%);
-      opacity: 0.05;
+      opacity: 0.07;
       border-radius: 50%;
     }
 
     .business-hero::after {
       content: '';
       position: absolute;
-      bottom: -25%;
+      bottom: -20%;
       right: -7%;
       width: 520px;
       height: 520px;
       background: radial-gradient(circle, var(--light-blue) 0%, transparent 67%);
-      opacity: 0.045;
+      opacity: 0.06;
       border-radius: 50%;
     }
 
@@ -162,25 +166,36 @@
     }
 
     /* Services Section */
-    .services-section {
-      padding: var(--space-9) var(--space-4) var(--space-8);
-      max-width: 1100px;
-      margin: 0 auto;
-      background: transparent;
+    .services-wrapper {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.8) 40%,
+        rgba(255, 245, 238, 0.4) 100%
+      );
+      padding: var(--space-7) var(--space-4) var(--space-8);
       position: relative;
+      overflow: hidden;
     }
 
-    .services-section::before {
+    .services-wrapper::before {
       content: '';
       position: absolute;
-      top: 20%;
+      top: 15%;
       right: -6%;
       width: 420px;
       height: 420px;
       background: radial-gradient(circle, var(--pink) 0%, transparent 68%);
-      opacity: 0.03;
+      opacity: 0.05;
       border-radius: 50%;
       pointer-events: none;
+    }
+
+    .services-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     /* Primary Service Card */
@@ -317,7 +332,11 @@
 
     /* CTA Section */
     .cta-section {
-      background: transparent;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 245, 238, 0.4) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
       padding: var(--space-9) var(--space-4) var(--space-9);
       text-align: left;
       position: relative;
@@ -327,12 +346,12 @@
     .cta-section::before {
       content: '';
       position: absolute;
-      top: 35%;
+      top: 30%;
       left: 8%;
-      width: 370px;
-      height: 370px;
-      background: radial-gradient(circle, var(--purple) 0%, transparent 68%);
-      opacity: 0.04;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--green) 0%, transparent 68%);
+      opacity: 0.06;
       border-radius: 50%;
     }
 
@@ -343,6 +362,8 @@
       justify-content: space-between;
       align-items: center;
       gap: var(--space-6);
+      position: relative;
+      z-index: 2;
     }
 
     .cta-text h2 {
@@ -392,7 +413,7 @@
 
     @media (max-width: 640px) {
       .business-hero {
-        padding: var(--space-7) var(--space-4) var(--space-6);
+        padding: var(--space-7) var(--space-4) var(--space-5);
       }
 
       .business-hero h1 {
@@ -407,12 +428,12 @@
         font-size: 1.5rem;
       }
 
-      .services-section {
-        padding: var(--space-7) var(--space-4) var(--space-6);
+      .services-wrapper {
+        padding: var(--space-6) var(--space-4) var(--space-7);
       }
 
       .cta-section {
-        padding: var(--space-7) var(--space-4) var(--space-8);
+        padding: var(--space-8) var(--space-4) var(--space-8);
       }
     }
   </style>
@@ -446,41 +467,43 @@
   </section>
 
   <!-- Services Section -->
-  <section class="services-section">
-    <!-- Primary Service -->
-    <div class="primary-service">
-      <h2>Your Own Website</h2>
-      <p>Easy for clients to find, easy for you to edit</p>
+  <section class="services-wrapper">
+    <div class="services-section">
+      <!-- Primary Service -->
+      <div class="primary-service">
+        <h2>Your Own Website</h2>
+        <p>Easy for clients to find, easy for you to edit</p>
 
-      <ul>
-        <li>Custom design that reflects your unique approach and values</li>
-        <li>Simple, intuitive structure — easy for clients to navigate</li>
-        <li>Mobile-responsive and performance-optimized</li>
-        <li>Clear service descriptions, booking integration, and contact forms</li>
-        <li>Built with care and attention to detail</li>
-      </ul>
+        <ul>
+          <li>Custom design that reflects your unique approach and values</li>
+          <li>Simple, intuitive structure — easy for clients to navigate</li>
+          <li>Mobile-responsive and performance-optimized</li>
+          <li>Clear service descriptions, booking integration, and contact forms</li>
+          <li>Built with care and attention to detail</li>
+        </ul>
 
-      <p>Whether you're launching a new practice or refreshing your existing site, I create websites that feel calm, confident, and welcoming.</p>
-    </div>
-
-    <!-- Supporting Services -->
-    <div class="supporting-services">
-      <div class="service-card">
-        <span class="service-icon">✧</span>
-        <h3>Client Referrals</h3>
-        <p>Refer your clients for iPhone wellness sessions that reinforce the habits and routines you're helping them build.</p>
+        <p>Whether you're launching a new practice or refreshing your existing site, I create websites that feel calm, confident, and welcoming.</p>
       </div>
 
-      <div class="service-card">
-        <span class="service-icon">✦</span>
-        <h3>Workshops & Speaking</h3>
-        <p>Guest teaching and workshops on digital wellness, nervous system regulation, and intentional tech use.</p>
-      </div>
+      <!-- Supporting Services -->
+      <div class="supporting-services">
+        <div class="service-card">
+          <span class="service-icon">✧</span>
+          <h3>Client Referrals</h3>
+          <p>Refer your clients for iPhone wellness sessions that reinforce the habits and routines you're helping them build.</p>
+        </div>
 
-      <div class="service-card">
-        <span class="service-icon">✧</span>
-        <h3>Team Consulting</h3>
-        <p>Digital wellness strategy for your team — help your staff build healthier tech habits that support focus and wellbeing.</p>
+        <div class="service-card">
+          <span class="service-icon">✦</span>
+          <h3>Workshops & Speaking</h3>
+          <p>Guest teaching and workshops on digital wellness, nervous system regulation, and intentional tech use.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">✧</span>
+          <h3>Team Consulting</h3>
+          <p>Digital wellness strategy for your team — help your staff build healthier tech habits that support focus and wellbeing.</p>
+        </div>
       </div>
     </div>
   </section>
