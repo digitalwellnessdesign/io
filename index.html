@@ -499,7 +499,7 @@
 
     .comparison-header {
       text-align: center;
-      margin-bottom: var(--space-6);
+      margin-bottom: var(--space-5);
     }
 
     .comparison-header h2 {
@@ -512,7 +512,7 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      margin-top: var(--space-5);
+      margin-top: var(--space-4);
       background: white;
       border-radius: 8px;
       overflow: hidden;
@@ -520,29 +520,29 @@
     }
 
     .comparison-table thead {
-      background: linear-gradient(135deg, var(--soft-cream) 0%, white 100%);
+      background: var(--soft-cream);
     }
 
     .comparison-table th {
-      padding: var(--space-4) var(--space-3);
+      padding: var(--space-2) var(--space-2);
       text-align: center;
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       font-weight: 600;
       color: var(--midnight);
       border-bottom: 2px solid var(--color-sand);
       font-family: 'Inter', sans-serif;
-      line-height: 1.4;
+      line-height: 1.3;
       vertical-align: top;
     }
 
     .comparison-table th:first-child {
       text-align: left;
-      padding-left: var(--space-4);
-      width: 180px;
+      padding-left: var(--space-3);
+      width: 160px;
     }
 
     .comparison-table td {
-      padding: var(--space-4) var(--space-3);
+      padding: var(--space-2) var(--space-2);
       text-align: center;
       border-bottom: 1px solid var(--color-sand);
       font-size: 0.9375rem;
@@ -552,46 +552,39 @@
 
     .comparison-table td:first-child {
       text-align: left;
-      padding-left: var(--space-4);
+      padding-left: var(--space-3);
       font-weight: 500;
       color: var(--midnight);
-      line-height: 1.5;
+      line-height: 1.4;
+      font-size: 0.875rem;
     }
 
     .comparison-table .highlight-column {
-      background: linear-gradient(180deg, rgba(255, 245, 238, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+      background: rgba(255, 245, 238, 0.4);
       font-weight: 500;
     }
 
     .comparison-table thead .highlight-column {
       font-weight: 600;
       color: var(--deep-teal);
-      background: linear-gradient(180deg, var(--soft-cream) 0%, rgba(255, 245, 238, 0.6) 100%);
-    }
-
-    .comparison-table tbody tr:hover {
-      background-color: rgba(125, 180, 232, 0.02);
-    }
-
-    .comparison-table tbody tr:hover .highlight-column {
-      background: linear-gradient(180deg, rgba(255, 245, 238, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+      background: rgba(255, 245, 238, 0.6);
     }
 
     .check-yes {
-      color: var(--deep-teal);
-      font-size: 1.25rem;
+      color: #2c7a7b;
+      font-size: 1.125rem;
       font-weight: 600;
     }
 
     .check-no {
       color: var(--color-warm-gray);
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       opacity: 0.4;
     }
 
     .check-partial {
-      color: var(--sky-blue);
-      font-size: 1.25rem;
+      color: #2c7a7b;
+      font-size: 1.125rem;
       opacity: 0.7;
     }
 
@@ -954,16 +947,16 @@
 
       .comparison-table th,
       .comparison-table td {
-        padding: var(--space-3) var(--space-2);
+        padding: var(--space-2) var(--space-1);
       }
 
       .comparison-table th {
-        font-size: 0.75rem;
-        line-height: 1.3;
+        font-size: 0.7rem;
+        line-height: 1.2;
       }
 
       .comparison-table th:first-child {
-        width: 120px;
+        width: 100px;
       }
 
       .comparison-table td:first-child {
@@ -1087,18 +1080,18 @@
   <section class="comparison-section">
     <div class="comparison-container">
       <div class="comparison-header">
-        <h2 class="star-accent-3">You may have already tried some of these</h2>
+        <h2 class="star-accent-3">You may have tried some of these</h2>
       </div>
 
       <table class="comparison-table">
         <thead>
           <tr>
             <th></th>
+            <th>Dumbphone</th>
+            <th>Brick</th>
             <th>iPhone Limit settings</th>
             <th>Opal / blocker apps</th>
-            <th>Brick</th>
-            <th>Dumbphone / minimal phones</th>
-            <th class="highlight-column">Your custom redesign</th>
+            <th class="highlight-column">1:1 redesign support</th>
           </tr>
         </thead>
         <tbody>
@@ -1121,25 +1114,25 @@
           <tr>
             <td>Prioritizes your goals</td>
             <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
             <td><span class="check-partial">◐</span></td>
-            <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
             <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
             <td>Work compatible</td>
+            <td><span class="check-no">○</span></td>
+            <td><span class="check-no">○</span></td>
             <td><span class="check-yes">●</span></td>
             <td><span class="check-partial">◐</span></td>
-            <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
             <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
             <td>Evolves with you</td>
-            <td><span class="check-partial">◐</span></td>
-            <td><span class="check-partial">◐</span></td>
-            <td><span class="check-partial">◐</span></td>
             <td><span class="check-no">○</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-partial">◐</span></td>
+            <td><span class="check-partial">◐</span></td>
             <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
@@ -1147,7 +1140,7 @@
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
+            <td><span class="check-yes">●</span></td>
             <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
         </tbody>
