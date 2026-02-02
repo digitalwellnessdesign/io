@@ -1,0 +1,11 @@
+# Redirect old .html URLs to new clean URLs
+/about.html                     /about                        301
+/practitioners.html             /for-businesses               301
+/services.html                  /services                     301
+/contact.html                   /contact                      301
+/iphone-ritual-reset.html       /iphone-ritual-reset          301
+/iphone-sanctuary-session.html  /iphone-sanctuary-session     301
+/iphone-seasonal-syncs.html     /iphone-seasonal-syncs        301
+/sunset-sunrise-sync.html       /sunset-sunrise-sync          301
+/privacy.html                   /privacy                      301
+/terms.html                     /terms                        301
