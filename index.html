@@ -1048,12 +1048,21 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
+      .home-hero {
+        min-height: 70vh;
+        padding: var(--space-7) var(--space-3) var(--space-6);
+      }
+
       .home-hero h1 {
         font-size: 2.5rem;
       }
 
       .handwritten {
         font-size: 2.25rem;
+      }
+
+      .editorial-intro {
+        padding: var(--space-7) 0;
       }
 
       .editorial-grid {
@@ -1069,16 +1078,35 @@
         font-size: 2rem;
       }
 
+      .dual-audience {
+        padding: var(--space-7) 0;
+      }
+
+      .comparison-section {
+        padding: var(--space-7) 0;
+      }
+
+      .services-showcase {
+        padding: var(--space-7) 0;
+      }
+
       .service-cards {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .nature-tech {
+        padding: var(--space-7) 0;
       }
 
       .principle-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-3);
       }
 
       .hero-cta-group {
         flex-direction: column;
+        gap: var(--space-2);
       }
 
       .hero-cta-group .btn {
@@ -1086,36 +1114,47 @@
       }
 
       .comparison-table {
-        font-size: 0.8125rem;
         display: block;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        border: none;
       }
 
       .comparison-table thead,
-      .comparison-table tbody,
+      .comparison-table tbody {
+        display: block;
+      }
+
       .comparison-table tr {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
+        display: flex;
+      }
+
+      .comparison-table th:first-child,
+      .comparison-table td:first-child {
+        position: sticky;
+        left: 0;
+        background: white;
+        z-index: 1;
+        min-width: 110px;
+        flex-shrink: 0;
+        border-right: 1px solid var(--color-sand);
       }
 
       .comparison-table th,
       .comparison-table td {
-        padding: var(--space-2) var(--space-1);
+        flex: 1;
+        min-width: 80px;
+        padding: var(--space-2);
+        font-size: 0.8125rem;
       }
 
       .comparison-table th {
-        font-size: 0.7rem;
-        line-height: 1.2;
+        font-size: 0.75rem;
+        line-height: 1.3;
       }
 
-      .comparison-table th:first-child {
-        width: 100px;
-      }
-
-      .comparison-table td:first-child {
-        font-size: 0.8125rem;
+      .comparison-table thead th:first-child {
+        background: var(--soft-cream);
       }
 
       .email-capture {
@@ -1136,6 +1175,11 @@
     }
 
     @media (max-width: 480px) {
+      .home-hero {
+        min-height: 65vh;
+        padding: var(--space-6) var(--space-3) var(--space-5);
+      }
+
       .home-hero h1 {
         font-size: 2rem;
       }
@@ -1148,23 +1192,45 @@
         font-size: 0.8rem;
       }
 
-      .comparison-table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+      .editorial-intro {
+        padding: var(--space-6) 0;
       }
 
-      .comparison-table th,
-      .comparison-table td {
-        padding: var(--space-2);
-        font-size: 0.6875rem;
-        white-space: nowrap;
+      .dual-audience {
+        padding: var(--space-6) 0;
+      }
+
+      .comparison-section {
+        padding: var(--space-6) 0;
+      }
+
+      .services-showcase {
+        padding: var(--space-6) 0;
+      }
+
+      .service-card {
+        padding: var(--space-4);
+      }
+
+      .nature-tech {
+        padding: var(--space-6) 0;
       }
 
       .comparison-table th:first-child,
       .comparison-table td:first-child {
-        white-space: normal;
         min-width: 100px;
+        font-size: 0.75rem;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        min-width: 70px;
+        padding: var(--space-2) var(--space-1);
+        font-size: 0.75rem;
+      }
+
+      .comparison-table th {
+        font-size: 0.7rem;
       }
 
       .email-capture {
@@ -1276,7 +1342,6 @@
         <thead>
           <tr>
             <th></th>
-            <th>Dumbphone</th>
             <th>Brick</th>
             <th>iPhone Limit settings</th>
             <th>Opal / blocker apps</th>
@@ -1289,12 +1354,10 @@
             <td><span class="check-yes">●</span></td>
             <td><span class="check-yes">●</span></td>
             <td><span class="check-yes">●</span></td>
-            <td><span class="check-yes">●</span></td>
             <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
             <td>Helps you reflect</td>
-            <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
@@ -1304,13 +1367,11 @@
             <td>Prioritizes your goals</td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
-            <td><span class="check-no">○</span></td>
             <td><span class="check-partial">◐</span></td>
             <td class="highlight-column"><span class="check-yes">●</span></td>
           </tr>
           <tr>
             <td>Work compatible</td>
-            <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-yes">●</span></td>
             <td><span class="check-partial">◐</span></td>
@@ -1318,7 +1379,6 @@
           </tr>
           <tr>
             <td>Evolves with you</td>
-            <td><span class="check-no">○</span></td>
             <td><span class="check-partial">◐</span></td>
             <td><span class="check-partial">◐</span></td>
             <td><span class="check-partial">◐</span></td>
@@ -1326,7 +1386,6 @@
           </tr>
           <tr>
             <td>Non-shaming</td>
-            <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-no">○</span></td>
             <td><span class="check-yes">●</span></td>
