@@ -861,6 +861,128 @@
       margin-top: var(--space-2);
     }
 
+    /* Kit Form Overrides - Match existing design */
+    .capture-form form[data-sv-form] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: var(--space-3) !important;
+      max-width: 400px !important;
+      margin: 0 auto !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    /* Hide name field if present - email only */
+    .capture-form form[data-sv-form] input[name*="name"],
+    .capture-form form[data-sv-form] input[placeholder*="name" i],
+    .capture-form form[data-sv-form] input[placeholder*="first" i] {
+      display: none !important;
+    }
+
+    /* Style Kit form inputs */
+    .capture-form form[data-sv-form] input[type="email"],
+    .capture-form form[data-sv-form] input[type="text"] {
+      padding: var(--space-3) !important;
+      border: 2px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 8px !important;
+      font-size: 1rem !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: white !important;
+      transition: all 0.2s ease !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      min-height: 44px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .capture-form form[data-sv-form] input::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .capture-form form[data-sv-form] input:focus {
+      outline: none !important;
+      border-color: var(--sky-blue) !important;
+      background: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    /* Style Kit form button */
+    .capture-form form[data-sv-form] button[type="submit"],
+    .capture-form form[data-sv-form] button[data-element="submit"] {
+      padding: var(--space-3) !important;
+      background: white !important;
+      color: var(--midnight) !important;
+      border: none !important;
+      border-radius: 8px !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      min-height: 44px !important;
+      width: 100% !important;
+      touch-action: manipulation !important;
+      -webkit-appearance: none !important;
+      box-shadow: none !important;
+      text-transform: none !important;
+      letter-spacing: normal !important;
+    }
+
+    .capture-form form[data-sv-form] button[type="submit"]:hover,
+    .capture-form form[data-sv-form] button[data-element="submit"]:hover {
+      background: var(--sky-blue) !important;
+      color: white !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Remove any Kit branding or extra spacing */
+    .capture-form form[data-sv-form] .formkit-powered-by-convertkit-container,
+    .capture-form form[data-sv-form] [data-element="branding"] {
+      display: none !important;
+    }
+
+    /* Success/Error messages */
+    .capture-form form[data-sv-form] [data-element="success"],
+    .capture-form form[data-sv-form] .formkit-alert-success {
+      background: rgba(125, 180, 232, 0.2) !important;
+      border: 2px solid var(--sky-blue) !important;
+      color: white !important;
+      padding: var(--space-3) !important;
+      border-radius: 8px !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    .capture-form form[data-sv-form] [data-element="error"],
+    .capture-form form[data-sv-form] .formkit-alert-error {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border: 2px solid rgba(255, 255, 255, 0.4) !important;
+      color: white !important;
+      padding: var(--space-2) !important;
+      border-radius: 8px !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.875rem !important;
+    }
+
+    /* Mobile responsiveness for Kit form */
+    @media (max-width: 480px) {
+      .capture-form form[data-sv-form] {
+        padding: 0 var(--space-2) !important;
+      }
+
+      .capture-form form[data-sv-form] input[type="email"],
+      .capture-form form[data-sv-form] input[type="text"] {
+        font-size: 16px !important;
+        padding: calc(var(--space-2) + 2px) var(--space-3) !important;
+      }
+
+      .capture-form form[data-sv-form] button[type="submit"],
+      .capture-form form[data-sv-form] button[data-element="submit"] {
+        font-size: 1rem !important;
+        padding: calc(var(--space-2) + 2px) var(--space-3) !important;
+      }
+    }
+
     /* Updated button styles */
     .btn-light {
       background: white;
@@ -970,6 +1092,22 @@
       .comparison-table td:first-child {
         font-size: 0.8125rem;
       }
+
+      .email-capture {
+        padding: var(--space-6) 0;
+      }
+
+      .capture-content {
+        padding: 0 var(--space-3);
+      }
+
+      .capture-content h2 {
+        font-size: 1.875rem;
+      }
+
+      .capture-content p {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1002,6 +1140,24 @@
       .comparison-table td:first-child {
         white-space: normal;
         min-width: 100px;
+      }
+
+      .email-capture {
+        padding: var(--space-5) 0;
+      }
+
+      .capture-content {
+        padding: 0 var(--space-2);
+      }
+
+      .capture-content h2 {
+        font-size: 1.75rem;
+        line-height: 1.25;
+      }
+
+      .capture-content p {
+        font-size: 0.95rem;
+        line-height: 1.65;
       }
     }
   </style>
@@ -1220,11 +1376,9 @@
       <h2 class="star-accent-2">Start your seasonal redesign</h2>
       <p>Download the free printable guide with tips to align your iPhone with this season of your life—and the one outside your window.</p>
 
-      <form action="https://example.com/EMAIL-SIGNUP" method="post" class="capture-form">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Send Me the Guide</button>
-      </form>
+      <div class="capture-form">
+        <script async data-uid="d83b84218d" src="https://digital-wellness-design.kit.com/d83b84218d/index.js"></script>
+      </div>
 
       <p class="form-note">Join for the free guide plus seasonal tips (sent quarterly, never spammy).</p>
     </div>
