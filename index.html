@@ -862,7 +862,9 @@
     }
 
     /* Kit Form Overrides - Match existing design */
-    .capture-form form[data-sv-form] {
+    .capture-form form,
+    .capture-form form[data-sv-form],
+    .capture-form .formkit-form {
       display: flex !important;
       flex-direction: column !important;
       gap: var(--space-3) !important;
@@ -874,16 +876,25 @@
       padding: 0 !important;
     }
 
-    /* Hide name field if present - email only */
-    .capture-form form[data-sv-form] input[name*="name"],
-    .capture-form form[data-sv-form] input[placeholder*="name" i],
-    .capture-form form[data-sv-form] input[placeholder*="first" i] {
+    /* Ensure form container is visible */
+    .capture-form {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    /* Hide name field if present - email only (optional, can be controlled in Kit) */
+    .capture-form input[name="fields[first_name]"],
+    .capture-form input[name="fields[last_name]"],
+    .capture-form input[id*="first_name"],
+    .capture-form input[id*="last_name"] {
       display: none !important;
     }
 
-    /* Style Kit form inputs */
-    .capture-form form[data-sv-form] input[type="email"],
-    .capture-form form[data-sv-form] input[type="text"] {
+    /* Style Kit form inputs - use broader selectors */
+    .capture-form form input[type="email"],
+    .capture-form form input[type="text"],
+    .capture-form input[type="email"],
+    .capture-form input[type="text"] {
       padding: var(--space-3) !important;
       border: 2px solid rgba(255, 255, 255, 0.2) !important;
       border-radius: 8px !important;
@@ -895,21 +906,26 @@
       min-height: 44px !important;
       width: 100% !important;
       box-sizing: border-box !important;
+      display: block !important;
     }
 
-    .capture-form form[data-sv-form] input::placeholder {
+    .capture-form form input::placeholder,
+    .capture-form input::placeholder {
       color: rgba(255, 255, 255, 0.6) !important;
     }
 
-    .capture-form form[data-sv-form] input:focus {
+    .capture-form form input:focus,
+    .capture-form input:focus {
       outline: none !important;
       border-color: var(--sky-blue) !important;
       background: rgba(255, 255, 255, 0.15) !important;
     }
 
-    /* Style Kit form button */
-    .capture-form form[data-sv-form] button[type="submit"],
-    .capture-form form[data-sv-form] button[data-element="submit"] {
+    /* Style Kit form button - use broader selectors */
+    .capture-form form button[type="submit"],
+    .capture-form form button[data-element="submit"],
+    .capture-form button[type="submit"],
+    .capture-form button {
       padding: var(--space-3) !important;
       background: white !important;
       color: var(--midnight) !important;
@@ -927,24 +943,28 @@
       box-shadow: none !important;
       text-transform: none !important;
       letter-spacing: normal !important;
+      display: block !important;
     }
 
-    .capture-form form[data-sv-form] button[type="submit"]:hover,
-    .capture-form form[data-sv-form] button[data-element="submit"]:hover {
+    .capture-form form button[type="submit"]:hover,
+    .capture-form form button[data-element="submit"]:hover,
+    .capture-form button[type="submit"]:hover,
+    .capture-form button:hover {
       background: var(--sky-blue) !important;
       color: white !important;
       transform: translateY(-2px) !important;
     }
 
     /* Remove any Kit branding or extra spacing */
-    .capture-form form[data-sv-form] .formkit-powered-by-convertkit-container,
-    .capture-form form[data-sv-form] [data-element="branding"] {
+    .capture-form .formkit-powered-by-convertkit-container,
+    .capture-form [data-element="branding"],
+    .capture-form .seva-branding {
       display: none !important;
     }
 
     /* Success/Error messages */
-    .capture-form form[data-sv-form] [data-element="success"],
-    .capture-form form[data-sv-form] .formkit-alert-success {
+    .capture-form [data-element="success"],
+    .capture-form .formkit-alert-success {
       background: rgba(125, 180, 232, 0.2) !important;
       border: 2px solid var(--sky-blue) !important;
       color: white !important;
@@ -953,8 +973,8 @@
       font-family: 'Inter', sans-serif !important;
     }
 
-    .capture-form form[data-sv-form] [data-element="error"],
-    .capture-form form[data-sv-form] .formkit-alert-error {
+    .capture-form [data-element="error"],
+    .capture-form .formkit-alert-error {
       background: rgba(255, 255, 255, 0.15) !important;
       border: 2px solid rgba(255, 255, 255, 0.4) !important;
       color: white !important;
@@ -966,18 +986,23 @@
 
     /* Mobile responsiveness for Kit form */
     @media (max-width: 480px) {
-      .capture-form form[data-sv-form] {
+      .capture-form form,
+      .capture-form .formkit-form {
         padding: 0 var(--space-2) !important;
       }
 
-      .capture-form form[data-sv-form] input[type="email"],
-      .capture-form form[data-sv-form] input[type="text"] {
+      .capture-form form input[type="email"],
+      .capture-form form input[type="text"],
+      .capture-form input[type="email"],
+      .capture-form input[type="text"] {
         font-size: 16px !important;
         padding: calc(var(--space-2) + 2px) var(--space-3) !important;
       }
 
-      .capture-form form[data-sv-form] button[type="submit"],
-      .capture-form form[data-sv-form] button[data-element="submit"] {
+      .capture-form form button[type="submit"],
+      .capture-form form button[data-element="submit"],
+      .capture-form button[type="submit"],
+      .capture-form button {
         font-size: 1rem !important;
         padding: calc(var(--space-2) + 2px) var(--space-3) !important;
       }
