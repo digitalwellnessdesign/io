@@ -411,15 +411,18 @@
       padding: var(--space-3) var(--space-5);
       background: linear-gradient(135deg, var(--green) 0%, var(--light-blue) 100%);
       border-radius: 8px;
+      border: 2px solid var(--green);
       text-decoration: none;
       transition: all 0.3s ease;
       box-shadow: 0 4px 12px rgba(44, 122, 123, 0.2);
     }
 
     .contact-email:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(44, 122, 123, 0.3);
-      background: linear-gradient(135deg, var(--light-blue) 0%, var(--green) 100%);
+      background: linear-gradient(135deg, rgba(44, 122, 123, 0.1) 0%, rgba(125, 180, 232, 0.1) 100%);
+      color: var(--navy);
+      border-color: var(--navy);
+      box-shadow: none;
+      transform: none;
     }
 
     /* Responsive Design */
