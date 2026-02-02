@@ -868,18 +868,22 @@
 
     .btn-light:hover {
       background: transparent;
-      color: white;
+      color: var(--midnight);
+      border-color: var(--midnight);
     }
 
     .btn-teal {
-      background: var(--deep-teal);
+      background: linear-gradient(135deg, var(--deep-teal) 0%, var(--sky-blue) 100%);
       color: white;
-      border: 2px solid var(--deep-teal);
+      border: 2px solid transparent;
+      box-shadow: 0 4px 12px rgba(44, 122, 123, 0.2);
     }
 
     .btn-teal:hover {
-      background: var(--sky-blue);
-      border-color: var(--sky-blue);
+      background: linear-gradient(135deg, var(--sky-blue) 0%, var(--deep-teal) 100%);
+      box-shadow: 0 8px 20px rgba(44, 122, 123, 0.3);
+      transform: translateY(-2px);
+      border-color: transparent;
     }
 
     .btn-outline-dark {
