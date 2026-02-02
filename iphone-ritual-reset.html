@@ -20,16 +20,6 @@
   <link rel="stylesheet" href="/styles/global.css">
 
   <style>
-    @font-face {
-      font-family: 'Gistesy';
-      src: url('/fonts/gistesy.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-  </style>
-
-  <style>
     :root {
       --navy: #1e2a47;
       --teal: #2c7a7b;
@@ -211,17 +201,6 @@
       margin-bottom: var(--space-4);
     }
 
-    .cursive-intro {
-      font-family: 'Gistesy', serif;
-      font-size: 3rem;
-      color: var(--navy);
-      text-align: center;
-      margin-bottom: var(--space-7);
-      line-height: 1.5;
-      opacity: 0.96;
-      letter-spacing: 0.015em;
-    }
-
     .process-overview {
       display: grid;
       gap: var(--space-5);
@@ -229,7 +208,8 @@
     }
 
     .process-card {
-      border-left: 4px solid var(--teal);
+      border-left: 4px solid;
+      border-image: linear-gradient(180deg, var(--teal) 0%, var(--light-blue) 100%) 1;
       padding: var(--space-5) var(--space-6);
       background: linear-gradient(
         90deg,
@@ -238,8 +218,8 @@
       );
     }
 
-    .process-card:nth-child(2) {
-      border-left-color: var(--pink);
+    .process-card.step-2-card {
+      border-image: linear-gradient(180deg, var(--pink) 0%, var(--purple) 30%, var(--light-blue) 100%) 1;
       background: linear-gradient(
         90deg,
         rgba(218, 114, 163, 0.04) 0%,
@@ -257,7 +237,7 @@
       opacity: 0.9;
     }
 
-    .process-card:nth-child(2) .card-label {
+    .process-card.step-2-card .card-label {
       color: var(--pink);
     }
 
@@ -298,7 +278,8 @@
     }
 
     .rhythm-item {
-      border-left: 3px solid var(--light-blue);
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, var(--teal) 0%, var(--light-blue) 100%) 1;
       padding-left: var(--space-5);
     }
 
@@ -330,16 +311,16 @@
     }
 
     .wellness-wheel-container {
-      margin: var(--space-7) 0;
-      padding: var(--space-6);
+      margin: var(--space-6) 0;
+      padding: var(--space-5) 0;
       position: relative;
     }
 
     .wheel-intro {
       text-align: center;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: #2d3748;
-      margin-bottom: var(--space-7);
+      margin-bottom: var(--space-6);
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
@@ -349,59 +330,26 @@
     .wellness-wheel {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-6);
-      max-width: 900px;
+      gap: var(--space-4);
+      max-width: 750px;
       margin: 0 auto;
       position: relative;
     }
 
-    .wellness-wheel::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(218, 114, 163, 0.06) 0%,
-        rgba(125, 180, 232, 0.04) 50%,
-        transparent 100%
-      );
-      border: 2px solid rgba(44, 122, 123, 0.12);
-      z-index: 0;
-      pointer-events: none;
-    }
-
     .wellness-spoke {
       position: relative;
-      padding: var(--space-5);
+      padding: var(--space-4);
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.8) 0%,
-        rgba(255, 245, 238, 0.4) 100%
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 245, 238, 0.3) 100%
       );
-      border-radius: 8px;
-      border: 1px solid rgba(44, 122, 123, 0.08);
-      z-index: 1;
-    }
-
-    .wellness-spoke::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--pink) 0%, var(--light-blue) 100%);
-      border-radius: 4px 0 0 4px;
-      opacity: 0.6;
+      border-radius: 6px;
+      border: 1px solid rgba(44, 122, 123, 0.1);
     }
 
     .spoke-category {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -411,8 +359,8 @@
     }
 
     .spoke-example {
-      font-size: 1rem;
-      line-height: 1.65;
+      font-size: 0.95rem;
+      line-height: 1.6;
       color: #3d4a5c;
       margin: 0;
     }
@@ -447,8 +395,19 @@
       font-size: 1.08rem;
       line-height: 1.75;
       color: #2d3748;
-      margin-bottom: var(--space-7);
+      margin-bottom: var(--space-6);
       max-width: 720px;
+    }
+
+    .step-2-header {
+      border-left: 4px solid;
+      border-image: linear-gradient(180deg, var(--pink) 0%, var(--purple) 30%, var(--light-blue) 100%) 1;
+      padding-left: var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+
+    .step-2-header h2 {
+      margin-bottom: 0;
     }
 
     .cta-section {
@@ -507,10 +466,6 @@
         font-size: 1.15rem;
       }
 
-      .cursive-intro {
-        font-size: 2.25rem;
-      }
-
       .content-section h2 {
         font-size: 1.75rem;
       }
@@ -529,11 +484,7 @@
 
       .wellness-wheel {
         grid-template-columns: 1fr;
-        gap: var(--space-4);
-      }
-
-      .wellness-wheel::before {
-        display: none;
+        gap: var(--space-3);
       }
     }
 
@@ -550,10 +501,6 @@
         font-size: 1.1rem;
       }
 
-      .cursive-intro {
-        font-size: 1.95rem;
-      }
-
       .content-section h2 {
         font-size: 1.6rem;
       }
@@ -567,7 +514,7 @@
       }
 
       .wellness-wheel-container {
-        padding: var(--space-4);
+        padding: var(--space-4) 0;
       }
     }
   </style>
@@ -600,19 +547,18 @@
 
   <section class="content-section section-overview">
     <div class="content-inner">
-      <p class="cursive-intro">What if your phone supported that wellness habit or routine?</p>
-      <h2>How we make your phone work for you</h2>
+      <h2>2 Steps to make your phone work for you</h2>
 
       <div class="process-overview">
         <div class="process-card">
-          <div class="card-label">30-minute free call</div>
+          <div class="card-label">Step 1 — 30-minute free call</div>
           <h3>Map your daily rhythm</h3>
           <p>You'll receive my Daily Rhythm Mapper tool immediately after booking. It helps you clarify what ritual matters most right now. Then we'll walk through it together and start brainstorming how to redesign your iPhone.</p>
         </div>
 
-        <div class="process-card">
-          <div class="card-label">60-minute session</div>
-          <h3>Redesign your iPhone</h3>
+        <div class="process-card step-2-card">
+          <div class="card-label">Step 2 — 60-minute session</div>
+          <h3>Redesign your ritual + iPhone</h3>
           <p>We'll build your ritual and make 3–5 intentional changes to reduce noise and reinforce it.</p>
         </div>
       </div>
@@ -653,7 +599,9 @@
   <section class="content-section section-step-2">
     <div class="content-inner">
       <div class="step-label">Step 2</div>
-      <h2>Design your ritual and redesign your phone</h2>
+      <div class="step-2-header">
+        <h2>Redesign your ritual and iPhone</h2>
+      </div>
 
       <p class="redesign-intro">Together we'll shape a habit that fits your real life, then make intentional changes to your iPhone so it supports your new rhythm instead of distracting from it.</p>
 
