@@ -130,6 +130,8 @@
         rgba(125, 180, 232, 0.04) 50%,
         rgba(179, 157, 219, 0.04) 100%
       );
+      border-left: 5px solid;
+      border-image: linear-gradient(180deg, var(--teal) 0%, var(--light-blue) 100%) 1;
     }
 
     .section-step-2 {
@@ -139,6 +141,8 @@
         rgba(218, 114, 163, 0.04) 50%,
         rgba(255, 245, 238, 0.3) 100%
       );
+      border-left: 5px solid;
+      border-image: linear-gradient(180deg, var(--pink) 0%, var(--purple) 30%, var(--light-blue) 100%) 1;
     }
 
     .content-section::before {
@@ -208,21 +212,18 @@
     }
 
     .process-card {
-      border-left: 4px solid;
-      border-image: linear-gradient(180deg, var(--teal) 0%, var(--light-blue) 100%) 1;
       padding: var(--space-5) var(--space-6);
       background: linear-gradient(
         90deg,
-        rgba(44, 122, 123, 0.04) 0%,
+        rgba(44, 122, 123, 0.03) 0%,
         rgba(255, 255, 255, 0.5) 100%
       );
     }
 
     .process-card.step-2-card {
-      border-image: linear-gradient(180deg, var(--pink) 0%, var(--purple) 30%, var(--light-blue) 100%) 1;
       background: linear-gradient(
         90deg,
-        rgba(218, 114, 163, 0.04) 0%,
+        rgba(218, 114, 163, 0.03) 0%,
         rgba(255, 255, 255, 0.5) 100%
       );
     }
@@ -278,9 +279,7 @@
     }
 
     .rhythm-item {
-      border-left: 3px solid;
-      border-image: linear-gradient(180deg, var(--teal) 0%, var(--light-blue) 100%) 1;
-      padding-left: var(--space-5);
+      padding-left: 0;
     }
 
     .rhythm-item h3 {
@@ -311,8 +310,8 @@
     }
 
     .wellness-wheel-container {
-      margin: var(--space-6) 0;
-      padding: var(--space-5) 0;
+      margin: var(--space-5) 0;
+      padding: var(--space-4) 0;
       position: relative;
     }
 
@@ -320,7 +319,7 @@
       text-align: center;
       font-size: 1.05rem;
       color: #2d3748;
-      margin-bottom: var(--space-6);
+      margin-bottom: var(--space-5);
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
@@ -330,37 +329,68 @@
     .wellness-wheel {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-      max-width: 750px;
+      gap: var(--space-3);
+      max-width: 700px;
       margin: 0 auto;
       position: relative;
     }
 
     .wellness-spoke {
       position: relative;
-      padding: var(--space-4);
+      padding: var(--space-3) var(--space-4);
       background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.7) 0%,
         rgba(255, 245, 238, 0.3) 100%
       );
       border-radius: 6px;
-      border: 1px solid rgba(44, 122, 123, 0.1);
+      border: 1px solid rgba(44, 122, 123, 0.08);
     }
 
     .spoke-category {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--teal);
       margin-bottom: var(--space-2);
-      opacity: 0.9;
+      opacity: 0.95;
+    }
+
+    .wellness-spoke:nth-child(1) .spoke-category {
+      color: #2c7a7b;
+    }
+
+    .wellness-spoke:nth-child(2) .spoke-category {
+      color: #da72a3;
+    }
+
+    .wellness-spoke:nth-child(3) .spoke-category {
+      color: #7db4e8;
+    }
+
+    .wellness-spoke:nth-child(4) .spoke-category {
+      color: #b39ddb;
+    }
+
+    .wellness-spoke:nth-child(5) .spoke-category {
+      color: #e89c5d;
+    }
+
+    .wellness-spoke:nth-child(6) .spoke-category {
+      color: #6ba88f;
+    }
+
+    .wellness-spoke:nth-child(7) .spoke-category {
+      color: #d97ca3;
+    }
+
+    .wellness-spoke:nth-child(8) .spoke-category {
+      color: #5b9fbc;
     }
 
     .spoke-example {
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.55;
       color: #3d4a5c;
       margin: 0;
     }
@@ -400,9 +430,6 @@
     }
 
     .step-2-header {
-      border-left: 4px solid;
-      border-image: linear-gradient(180deg, var(--pink) 0%, var(--purple) 30%, var(--light-blue) 100%) 1;
-      padding-left: var(--space-5);
       margin-bottom: var(--space-6);
     }
 
@@ -547,13 +574,13 @@
 
   <section class="content-section section-overview">
     <div class="content-inner">
-      <h2>2 Steps to make your phone work for you</h2>
+      <h2>Let's make your phone work for you</h2>
 
       <div class="process-overview">
         <div class="process-card">
           <div class="card-label">Step 1 — 30-minute free call</div>
           <h3>Map your daily rhythm</h3>
-          <p>You'll receive my Daily Rhythm Mapper tool immediately after booking. It helps you clarify what ritual matters most right now. Then we'll walk through it together and start brainstorming how to redesign your iPhone.</p>
+          <p>You'll receive my Daily Rhythm Mapper, a Notion tool we'll use together, immediately after booking. It helps you clarify what ritual matters most right now. Then we'll walk through it together and start brainstorming how to redesign your iPhone.</p>
         </div>
 
         <div class="process-card step-2-card">
@@ -568,9 +595,9 @@
   <section class="content-section section-step-1">
     <div class="content-inner">
       <div class="step-label">Step 1</div>
-      <h2>Start with reflection and rhythm mapping</h2>
+      <h2>Start with reflecting on your days</h2>
 
-      <p>Before we touch your phone, we start with you. The Daily Rhythm Mapper helps you understand your natural patterns, energy shifts, and where a wellness habit can actually stick.</p>
+      <p>Before we touch your phone, we start with you. The Daily Rhythm Mapper, a Notion tool we'll use together, helps you understand your natural patterns, energy shifts, and where a wellness habit can actually stick.</p>
 
       <div class="rhythm-grid">
         <div class="rhythm-item">
@@ -665,8 +692,9 @@
   <section class="cta-section">
     <div class="cta-inner">
       <h2>Ready to align your phone with your wellness?</h2>
-      <p>You pick up your phone 150+ times a day. Let's make those moments work for you, not against you.</p>
+      <p>Many of us pick up our phones 150+ times a day. Let's make those moments you choose work for you, not against you.</p>
       <a href="https://calendly.com/digitalwellnessdesigner/dailyrhythm" class="btn btn-primary">Book Your Free Call</a>
+      <p style="margin-top: var(--space-4); font-size: 0.95rem; opacity: 0.85;">Join me for a 30-minute call to start reflecting and brainstorming.</p>
     </div>
   </section>
 
