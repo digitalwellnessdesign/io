@@ -6,25 +6,406 @@
   <title>iPhone Ritual Reset - $150 Session | Digital Wellness Design</title>
   <meta name="description" content="A 60-minute session to strengthen your wellness ritual with a screen setup that helps it stick. We'll replace distractions so your phone supports your habits.">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="iPhone Ritual Reset - $150 Session">
   <meta property="og:description" content="A 60-minute session to strengthen your wellness ritual with a screen setup that helps it stick.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.digitalwellnessdesign.com/iphone-ritual-reset.html">
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://www.digitalwellnessdesign.com/iphone-ritual-reset.html">
 
-  <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/styles/global.css">
+
+  <style>
+    :root {
+      --navy: #1e2a47;
+      --teal: #2c7a7b;
+      --pink: #da72a3;
+      --purple: #b39ddb;
+      --light-blue: #7db4e8;
+      --warm-cream: #fff5ee;
+      --silver-grey: #e6e6e6;
+    }
+
+    .ritual-hero {
+      padding: calc(var(--space-8) * 1.2) var(--space-4) var(--space-7);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 245, 238, 0.7) 0%,
+        rgba(255, 255, 255, 0.4) 100%
+      );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ritual-hero::before {
+      content: '';
+      position: absolute;
+      top: -15%;
+      right: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 65%);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .ritual-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -12%;
+      left: -8%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 68%);
+      opacity: 0.06;
+      border-radius: 50%;
+    }
+
+    .ritual-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ritual-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-4);
+      line-height: 1.15;
+    }
+
+    .ritual-hero .subtitle {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #2d3748;
+      margin-bottom: var(--space-6);
+      opacity: 0.92;
+    }
+
+    .ritual-hero .price {
+      font-size: 0.95rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: var(--space-5);
+    }
+
+    .ritual-hero .cta-wrapper {
+      margin-bottom: var(--space-4);
+    }
+
+    .ritual-hero .note {
+      font-size: 0.9rem;
+      color: #4a5568;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      padding: var(--space-8) var(--space-4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-gradient-1 {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 245, 238, 0.4) 100%
+      );
+    }
+
+    .section-gradient-2 {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 245, 238, 0.4) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.8) 100%
+      );
+    }
+
+    .section-gradient-3 {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 245, 238, 0.5) 100%
+      );
+    }
+
+    .content-section::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--pink) 0%, transparent 68%);
+      opacity: 0.04;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .section-gradient-1::before {
+      top: 15%;
+      right: -8%;
+    }
+
+    .section-gradient-2::before {
+      top: 20%;
+      left: -10%;
+      background: radial-gradient(circle, var(--light-blue) 0%, transparent 68%);
+    }
+
+    .section-gradient-3::before {
+      top: 25%;
+      right: -6%;
+      background: radial-gradient(circle, var(--teal) 0%, transparent 70%);
+    }
+
+    .content-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-5);
+      line-height: 1.3;
+    }
+
+    .content-section h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-3);
+      line-height: 1.35;
+    }
+
+    .content-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d3748;
+      margin-bottom: var(--space-4);
+    }
+
+    .accent-block {
+      border-left: 3px solid var(--teal);
+      padding-left: var(--space-5);
+      margin: var(--space-6) 0;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-5) 0;
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .feature-list li {
+      padding-left: var(--space-5);
+      position: relative;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #4a5568;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .steps-grid {
+      display: grid;
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    .step-item {
+      border-left: 3px solid;
+      padding: var(--space-5) var(--space-5) var(--space-4) var(--space-5);
+      background: rgba(255, 255, 255, 0.5);
+      position: relative;
+    }
+
+    .step-item:nth-child(1) {
+      border-left-color: var(--light-blue);
+    }
+
+    .step-item:nth-child(2) {
+      border-left-color: var(--pink);
+    }
+
+    .step-item:nth-child(3) {
+      border-left-color: var(--purple);
+    }
+
+    .step-item:nth-child(4) {
+      border-left-color: var(--teal);
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--space-2);
+      opacity: 0.8;
+    }
+
+    .step-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: var(--space-3);
+    }
+
+    .step-item p {
+      font-size: 0.98rem;
+      margin-bottom: 0;
+    }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    .included-item {
+      border-left: 3px solid;
+      padding-left: var(--space-5);
+    }
+
+    .included-item:nth-child(1) {
+      border-left-color: var(--light-blue);
+    }
+
+    .included-item:nth-child(2) {
+      border-left-color: var(--pink);
+    }
+
+    .included-item:nth-child(3) {
+      border-left-color: var(--purple);
+    }
+
+    .included-item:nth-child(4) {
+      border-left-color: var(--teal);
+    }
+
+    .included-item h3 {
+      font-size: 1.15rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .included-item p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .cta-section {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 245, 238, 0.5) 0%,
+        rgba(255, 255, 255, 0.7) 100%
+      );
+      padding: var(--space-9) var(--space-4);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, var(--purple) 0%, transparent 68%);
+      opacity: 0.06;
+      border-radius: 50%;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--space-4);
+      line-height: 1.3;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2d3748;
+      margin-bottom: var(--space-5);
+    }
+
+    @media (max-width: 768px) {
+      .ritual-hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .ritual-hero .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .included-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+      }
+
+      .content-section h2 {
+        font-size: 1.65rem;
+      }
+
+      .cta-section h2 {
+        font-size: 1.65rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .ritual-hero {
+        padding: var(--space-7) var(--space-4) var(--space-6);
+      }
+
+      .ritual-hero h1 {
+        font-size: 2rem;
+      }
+
+      .content-section {
+        padding: var(--space-7) var(--space-4);
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header Navigation -->
   <header class="site-header">
     <nav class="nav-container">
       <a href="/" class="site-logo">Digital Wellness Design</a>
@@ -38,161 +419,119 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
+  <section class="ritual-hero">
+    <div class="ritual-hero-inner">
       <h1>iPhone Ritual Reset</h1>
-      <p>A 60-minute session to strengthen your wellness ritual with a screen setup that helps it stick</p>
-      <a href="https://example.com/BOOKING-RITUAL-RESET" class="btn btn-primary">Buy to Book Now</a>
-      <p style="margin-top: var(--space-3); font-size: 0.95rem; color: var(--color-stone);">You'll book a time on my calendar after you enter payment details. Availability is generally Monday through Friday from 9 am to 5 pm ET.</p>
+      <p class="subtitle">A 60-minute session to strengthen your wellness ritual with a screen setup that helps it stick.</p>
+      <p class="price">$150</p>
+      <div class="cta-wrapper">
+        <a href="https://calendly.com/digitalwellnessdesigner/dailyrhythm" class="btn btn-primary">Start with a Free Call</a>
+      </div>
+      <p class="note">Book a free 15-minute intro to see if this is right for you.</p>
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section>
-    <div class="container content-section">
-      <h2>What if your phone supported that wellness habit or routine?</h2>
-      <p>Yes, instead of distracting you from the life you want to be living.</p>
-      <p>Let's customize your iPhone (and go beyond Screen Time Limits) to power up what you want to prioritize.</p>
+  <section class="content-section section-gradient-1">
+    <div class="content-inner">
+      <h2>What's included in your Ritual Reset</h2>
 
-      <h3>Trade distractions for what you want more of</h3>
-      <ul class="bullet-list">
-        <li>Clarity on what actually matters in your days this season</li>
-        <li>A wellness ritual that fits — and expands — your real life</li>
-        <li>iPhone design changes that reduce noise and reinforce your ritual</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section style="background-color: var(--color-sunlight);">
-    <div class="container content-section">
-      <h2>How we make your phone work for YOU</h2>
-      <p>This is one part mindset work, two parts meaningful tech tweaks.</p>
-
-      <div class="process-steps">
-        <div class="process-step">
-          <h3>1. Clarify your current priority and why</h3>
-          <p>We'll use this focus to shape your ritual and align your phone to support it. We can work on any priority you have:</p>
-          <ul class="bullet-list">
-            <li>Physical</li>
-            <li>Mental & Emotional</li>
-            <li>Productivity & Focus</li>
-            <li>Financial</li>
-            <li>Reflective & Spiritual</li>
-            <li>Relationships & Connection</li>
-            <li>Creativity & Joy</li>
-            <li>Home, Environment & Travel</li>
-          </ul>
+      <div class="included-grid">
+        <div class="included-item">
+          <h3>Live Implementation Session</h3>
+          <p>We'll clarify your priority and redesign your iPhone together live on a 60-minute video call.</p>
         </div>
 
-        <div class="process-step">
-          <h3>2. Co-design your custom wellness ritual</h3>
-          <p>Together we'll shape a habit or routine that fits your real life and moves you forward.</p>
-          <ul class="bullet-list">
-            <li>No-scroll morning grounding – start your day without spiraling into feeds</li>
-            <li>Wind-down that works – a cue that helps your nervous system actually rest</li>
-            <li>Weekly check-in – for groceries, finances or other planning</li>
-            <li>Protected creative blocks – focused time for writing, art or flow work</li>
-            <li>Gentle movement nudges – that fit your real energy (not forced)</li>
-            <li>Meal + hydration anchors – so essentials don't get skipped</li>
-          </ul>
+        <div class="included-item">
+          <h3>Personalized Wellness Ritual</h3>
+          <p>A custom routine designed around your real life, not someone else's morning routine.</p>
         </div>
 
-        <div class="process-step">
-          <h3>3. Customize your phone to support your ritual</h3>
-          <p>We'll apply intentional design changes to reduce noise and support your new rhythm. Depending on your goals, I'll guide you through some combination of these options:</p>
-          <ul class="bullet-list">
-            <li>Focus Modes that shift with your time, place, or energy</li>
-            <li>Home screen layouts that center what matters (and hide what doesn't)</li>
-            <li>Automations to create seamless starts, stops, or transitions</li>
-            <li>Shortcuts for routines, boundaries, or intention resets</li>
-            <li>Widgets that gently guide your attention where you want it</li>
-            <li>Quiet cues like filtered notifications and hidden apps to protect your space</li>
-          </ul>
+        <div class="included-item">
+          <h3>And Seamless Support</h3>
+          <p>Post-session email with setup steps and resources to keep your new rhythm going.</p>
+        </div>
+
+        <div class="included-item">
+          <h3>Post-Session Support</h3>
+          <p>Follow-up email with all recommendations and guidance to maintain your new setup.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Reassurance Section -->
-  <section>
-    <div class="container content-section">
-      <h2>If you tend to let your wellness habit slip but not your scroll</h2>
-      <p>You're not alone and you're not doing it wrong. This session is about rebuilding your rhythm, without shame or overwhelm.</p>
-      <p>You're not the only one who...</p>
-      <ul class="bullet-list">
-        <li>Tries setting app limits or deleting distractions, only to drift back</li>
-        <li>Loves your wellness practices, but they often get lost in the day-to-day</li>
-        <li>Thrives on variety, which makes routine feel slippery or rigid</li>
-        <li>Feels torn about your screen time, you rely on it and wish it felt more intentional</li>
-      </ul>
-      <p>We get pulled in a hundred directions. Let's build a phone setup that brings you back to yourself.</p>
-    </div>
-  </section>
+  <section class="content-section section-gradient-2">
+    <div class="content-inner">
+      <h2>We begin with you: rhythm mapping</h2>
+      <p>Before diving into tech changes, we map your natural patterns using my Daily Rhythm Mapper — a reflection tool that shows where friction lives and where your wellness ritual actually fits.</p>
 
-  <!-- What's Included Section -->
-  <section style="background-color: var(--color-sunlight);">
-    <div class="container content-section">
-      <h3>Your iPhone Ritual Reset will help you make wellness stick</h3>
-      <p>Your 60-minute session includes everything you need to kick off with clarity and momentum:</p>
-
-      <div class="feature-block">
-        <h3>Live Personalized Strategy</h3>
-        <p>We'll clarify your priority, map how it fits into your day, and explore how your phone can support it, instead of getting in the way.</p>
-      </div>
-
-      <div class="feature-block">
-        <h3>The Daily Rhythm Mapper</h3>
-        <p>Using my signature Notion-based tool, you'll reflect on your patterns, friction points, and natural rhythms to see where your ritual belongs.</p>
-      </div>
-
-      <div class="feature-block">
-        <h3>Targeted Redesign</h3>
-        <p>We'll identify 1–3 high-impact changes to make your intention more visible with Focus Modes, Shortcuts, or layout redesign.</p>
-      </div>
-
-      <div class="feature-block">
-        <h3>Post-Session Follow-Up</h3>
-        <p>You'll receive a follow-up email with all recommendations, resources, and next steps.</p>
+      <div class="accent-block">
+        <p>This isn't about forcing rigid routines. It's about understanding your flow — your energy, your transitions, your real life — so we can build something that sticks.</p>
       </div>
     </div>
   </section>
 
-  <!-- Proof Section -->
-  <section>
-    <div class="container content-section text-center">
-      <h2>Put the tool you already pick up 150 times a day to better use</h2>
-      <p>The average smartphone user unlocks their phone 150 times a day.</p>
-      <p>That's 150+ chances to feel scattered or supported. What if your phone became a tool for grounding, not just grabbing and going?</p>
+  <section class="content-section section-gradient-1">
+    <div class="content-inner">
+      <h2>Getting our session to work</h2>
+
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-number">Step 1</div>
+          <h3>Book your free intro call</h3>
+          <p>We'll talk through your goals and see if the Ritual Reset is the right fit.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">Step 2</div>
+          <h3>Purchase and schedule</h3>
+          <p>Once you're ready, purchase the session and book your 60-minute slot.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">Step 3</div>
+          <h3>Share your current setup</h3>
+          <p>Send screenshots of your iPhone and complete a short intake form.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">Step 4</div>
+          <h3>We meet live and redesign</h3>
+          <p>On our video call, you'll share your screen and I'll guide you through meaningful changes in real time.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- How It Works Section -->
-  <section style="background-color: var(--color-sunlight);">
-    <div class="container content-section">
-      <h3>How it works</h3>
-      <ol class="numbered-list">
-        <li>Once you buy, you'll view my calendar to schedule your Ritual Reset and complete intake questions.</li>
-        <li>You'll receive an email requesting your reply with screenshots of your current iPhone Homescreens and more.</li>
-        <li>We meet live on a 60-minute FaceTime. You'll share your iPhone screen and I'll walk you through making changes.</li>
-        <li>You receive an email follow-up with a recap and any final instructions to complete your reset.</li>
-      </ol>
+  <section class="content-section section-gradient-3">
+    <div class="content-inner">
+      <h2>How we create your personalized ritual</h2>
+
+      <div class="accent-block">
+        <h3>1. Clarify your current priority</h3>
+        <p>What matters most right now? We can work with any wellness area — movement, rest, creativity, focus, connection, or something entirely your own.</p>
+      </div>
+
+      <div class="accent-block">
+        <h3>2. Design your ritual</h3>
+        <p>Together we'll shape a habit that fits your real life. Not rigid. Not forced. Just aligned.</p>
+      </div>
+
+      <div class="accent-block">
+        <h3>3. Customize your phone to support it</h3>
+        <p>We'll make 1–3 high-impact changes using Focus Modes, Shortcuts, automations, or home screen redesigns — whatever serves your ritual best.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Closing Section -->
-  <section>
-    <div class="container content-section text-center">
-      <h3>A $150 session designed to pay off daily — and it's ready when we hang up</h3>
-      <p>This isn't one more thing to figure out later. In just 60 minutes, your ritual is designed, your phone is aligned, and the support you need is already in motion.</p>
-      <p>No extra apps to buy. No pressure to be perfect. This is your space to start a small shift with a ripple effect.</p>
-      <p>You've probably been meaning to make time for something like this. Now you don't have to do it alone.</p>
-      <a href="https://example.com/BOOKING-RITUAL-RESET" class="btn btn-primary" style="margin-top: var(--space-4);">Book Your Ritual Reset Now</a>
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Ready to align your phone with your wellness?</h2>
+      <p>You pick up your phone 150+ times a day. Let's make those moments work for you, not against you.</p>
+      <p>Start with a free 15-minute call to see if this is right for you.</p>
+      <a href="https://calendly.com/digitalwellnessdesigner/dailyrhythm" class="btn btn-primary">Book Your Free Intro Call</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-content">
       <p class="footer-tagline">Rooted in nature's rhythms. Designed for your unique alignment.</p>
