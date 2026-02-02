@@ -213,13 +213,13 @@
 
     .cursive-intro {
       font-family: 'Gistesy', serif;
-      font-size: 2.25rem;
+      font-size: 3rem;
       color: var(--navy);
       text-align: center;
       margin-bottom: var(--space-7);
-      line-height: 1.45;
+      line-height: 1.5;
       opacity: 0.96;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.015em;
     }
 
     .process-overview {
@@ -329,28 +329,92 @@
       opacity: 0.92;
     }
 
-    .ritual-list {
-      list-style: none;
-      padding: 0;
-      margin: var(--space-5) 0 0;
-      display: grid;
-      gap: var(--space-3);
-    }
-
-    .ritual-list li {
-      padding-left: var(--space-5);
+    .wellness-wheel-container {
+      margin: var(--space-7) 0;
+      padding: var(--space-6);
       position: relative;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #4a5568;
     }
 
-    .ritual-list li::before {
-      content: '—';
+    .wheel-intro {
+      text-align: center;
+      font-size: 1.08rem;
+      color: #2d3748;
+      margin-bottom: var(--space-7);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .wellness-wheel {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .wellness-wheel::before {
+      content: '';
       position: absolute;
-      left: var(--space-2);
-      color: var(--pink);
-      font-weight: 500;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(218, 114, 163, 0.06) 0%,
+        rgba(125, 180, 232, 0.04) 50%,
+        transparent 100%
+      );
+      border: 2px solid rgba(44, 122, 123, 0.12);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .wellness-spoke {
+      position: relative;
+      padding: var(--space-5);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 245, 238, 0.4) 100%
+      );
+      border-radius: 8px;
+      border: 1px solid rgba(44, 122, 123, 0.08);
+      z-index: 1;
+    }
+
+    .wellness-spoke::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--pink) 0%, var(--light-blue) 100%);
+      border-radius: 4px 0 0 4px;
+      opacity: 0.6;
+    }
+
+    .spoke-category {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      margin-bottom: var(--space-2);
+      opacity: 0.9;
+    }
+
+    .spoke-example {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #3d4a5c;
+      margin: 0;
     }
 
     .tech-list {
@@ -383,7 +447,7 @@
       font-size: 1.08rem;
       line-height: 1.75;
       color: #2d3748;
-      margin-bottom: var(--space-6);
+      margin-bottom: var(--space-7);
       max-width: 720px;
     }
 
@@ -444,7 +508,7 @@
       }
 
       .cursive-intro {
-        font-size: 1.85rem;
+        font-size: 2.25rem;
       }
 
       .content-section h2 {
@@ -462,6 +526,15 @@
       .content-section {
         padding: var(--space-8) var(--space-4);
       }
+
+      .wellness-wheel {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .wellness-wheel::before {
+        display: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -478,7 +551,7 @@
       }
 
       .cursive-intro {
-        font-size: 1.6rem;
+        font-size: 1.95rem;
       }
 
       .content-section h2 {
@@ -491,6 +564,10 @@
 
       .content-section {
         padding: var(--space-7) var(--space-4);
+      }
+
+      .wellness-wheel-container {
+        padding: var(--space-4);
       }
     }
   </style>
@@ -580,16 +657,53 @@
 
       <p class="redesign-intro">Together we'll shape a habit that fits your real life, then make intentional changes to your iPhone so it supports your new rhythm instead of distracting from it.</p>
 
-      <h3>Example rituals we might design:</h3>
-      <ul class="ritual-list">
-        <li>No-scroll morning grounding</li>
-        <li>Wind-down that helps your nervous system rest</li>
-        <li>Weekly check-in for planning or reflection</li>
-        <li>Protected creative blocks</li>
-        <li>Gentle movement nudges that fit your real energy</li>
-      </ul>
+      <div class="wellness-wheel-container">
+        <p class="wheel-intro">Your ritual can support any dimension of wellness. Here are examples across the wellness wheel:</p>
 
-      <h3 style="margin-top: var(--space-6);">iPhone changes we'll explore:</h3>
+        <div class="wellness-wheel">
+          <div class="wellness-spoke">
+            <div class="spoke-category">Physical</div>
+            <p class="spoke-example">Gentle movement nudges that fit your real energy</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Emotional</div>
+            <p class="spoke-example">Wind-down that helps your nervous system rest</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Intellectual</div>
+            <p class="spoke-example">Protected creative blocks for writing or deep work</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Financial</div>
+            <p class="spoke-example">Weekly check-in for budgeting or planning</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Spiritual</div>
+            <p class="spoke-example">No-scroll morning grounding or reflection</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Social</div>
+            <p class="spoke-example">Intentional connection time without distractions</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Creativity</div>
+            <p class="spoke-example">Distraction-free art, music, or maker time</p>
+          </div>
+
+          <div class="wellness-spoke">
+            <div class="spoke-category">Environment</div>
+            <p class="spoke-example">Meal prep and home care anchors</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>iPhone changes we'll explore:</h3>
       <ul class="tech-list">
         <li>Focus Modes that shift with your time or energy</li>
         <li>Home screen layouts that center what matters</li>
