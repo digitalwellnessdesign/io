@@ -3,7 +3,7 @@
 /* ===== FONTS ===== */
 @font-face {
   font-family: 'Loubag';
-  src: url('/fonts/loubag-semi-bold.ttf') format('truetype');
+  src: url('../fonts/loubag-semi-bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
