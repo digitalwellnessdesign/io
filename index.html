@@ -648,7 +648,7 @@
       background: linear-gradient(135deg, var(--soft-cream) 0%, white 100%);
       border: 1px solid var(--color-sand);
       border-radius: 12px;
-      padding: var(--space-5);
+      padding: var(--space-6) var(--space-5);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -675,17 +675,26 @@
       box-shadow: 0 16px 32px rgba(30, 42, 71, 0.1);
     }
 
-    .service-illustration {
-      width: 100%;
-      height: 180px;
+    .service-card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
       margin-bottom: var(--space-4);
+    }
+
+    .service-illustration {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
       object-fit: contain;
+      opacity: 0.35;
     }
 
     .service-card h3 {
-      font-size: 1.5rem;
+      font-size: 1.625rem;
       color: var(--midnight);
-      margin-bottom: var(--space-2);
+      margin: 0;
+      line-height: 1.2;
     }
 
     .service-card p {
@@ -1095,6 +1104,14 @@
         gap: var(--space-4);
       }
 
+      .service-card-header {
+        gap: var(--space-2);
+      }
+
+      .service-card h3 {
+        font-size: 1.375rem;
+      }
+
       .nature-tech {
         padding: var(--space-7) 0;
       }
@@ -1404,22 +1421,28 @@
     </div>
     <div class="service-cards">
       <div class="service-card">
-        <img src="assets/illustrations/ritual.svg" alt="Ritual Reset illustration" class="service-illustration" width="300" height="300" loading="lazy" style="width: 100%; height: auto;">
-        <h3>Ritual Reset</h3>
+        <div class="service-card-header">
+          <img src="assets/illustrations/ritual.svg" alt="" class="service-illustration" width="48" height="48" loading="lazy" aria-hidden="true">
+          <h3>Ritual Reset</h3>
+        </div>
         <p>A focused 60-minute session. We'll simplify, realign and set up your iPhone to support what matters most right now.</p>
         <a href="https://calendly.com/digitalwellnessdesigner/dailyrhythm" class="btn btn-outline-dark">Start with a free call</a>
       </div>
 
       <div class="service-card">
-        <img src="assets/illustrations/sanctuary.svg" alt="Sanctuary Session illustration" class="service-illustration" width="300" height="300" loading="lazy" style="width: 100%; height: auto;">
-        <h3>Sanctuary Session</h3>
+        <div class="service-card-header">
+          <img src="assets/illustrations/sanctuary.svg" alt="" class="service-illustration" width="48" height="48" loading="lazy" aria-hidden="true">
+          <h3>Sanctuary Session</h3>
+        </div>
         <p>A half-day deep dive. Your iPhone becomes a wellness sanctuary. Thoughtfully redesigned, top to bottom.</p>
         <span class="btn btn-outline-dark" style="opacity: 0.5; cursor: default; pointer-events: none;">Coming Soon</span>
       </div>
 
       <div class="service-card">
-        <img src="assets/illustrations/seasonal.svg" alt="Seasonal Syncs illustration" class="service-illustration" width="300" height="300" loading="lazy" style="width: 100%; height: auto;">
-        <h3>Seasonal Syncs</h3>
+        <div class="service-card-header">
+          <img src="assets/illustrations/seasonal.svg" alt="" class="service-illustration" width="48" height="48" loading="lazy" aria-hidden="true">
+          <h3>Seasonal Syncs</h3>
+        </div>
         <p>Ongoing support and coaching. Your iPhone evolves with you across seasons — of life and the year.</p>
         <span class="btn btn-outline-dark" style="opacity: 0.5; cursor: default; pointer-events: none;">Coming Soon</span>
       </div>
