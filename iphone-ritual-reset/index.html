@@ -79,14 +79,11 @@
       margin: 0 auto;
       position: relative;
       z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-7);
-      align-items: center;
     }
 
     .ritual-hero-content {
       text-align: left;
+      max-width: 700px;
     }
 
     .ritual-hero .page-label {
@@ -117,17 +114,18 @@
     }
 
     .ritual-hero-visual {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: absolute;
+      top: -20px;
+      right: 40px;
+      width: 180px;
+      height: 180px;
+      pointer-events: none;
     }
 
     .ritual-hero-visual img {
       width: 100%;
-      max-width: 450px;
-      height: auto;
-      opacity: 0.75;
+      height: 100%;
+      opacity: 0.55;
       position: relative;
       z-index: 1;
     }
